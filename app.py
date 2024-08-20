@@ -4,7 +4,7 @@ import pandas as pd
 app = Flask(__name__)
 
 # Load and preprocess data
-file_path = "C:\\Users\\tilly\\OneDrive\\Desktop\\FootballData\\updated_data2.csv"
+file_path = "updated_data2.csv"
 data = pd.read_csv(file_path)
 data['Date'] = pd.to_datetime(data['Date'])
 
