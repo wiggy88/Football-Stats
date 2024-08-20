@@ -21,6 +21,7 @@ def calculate_stats(league, home_team, away_team, num_games, selected_stat):
     home_results = []
     away_results = []
 
+    # Home Team Statistics
     if home_team:
         team_data_home = filtered_data[filtered_data['HomeTeam'] == home_team]
         last_games_home = team_data_home.tail(num_games)
@@ -29,14 +30,20 @@ def calculate_stats(league, home_team, away_team, num_games, selected_stat):
                 avg_goals_home = last_games_home['FTHG'].mean()
                 avg_goals_against_home = last_games_home['FTAG'].mean()
                 avg_sot_home = last_games_home['HST'].mean()
-                g_per_sot_home = avg_goals_home / avg_sot_home if avg_sot_home > 0 else 0
-                avg_sot_home = last_games_home['HST'].mean()
                 avg_sotagainst_home = last_games_home['AST'].mean()
+                g_per_sot_home = avg_goals_home / avg_sot_home if avg_sot_home > 0 else 0
+
                 home_results.append(f"Avg Shots on Target (Home - {home_team}): {avg_sot_home:.2f}")
-                home_results.append(f"Avg Shots on Target Against(Home - {home_team}): {avg_sotagainst_home:.2f}")
+                home_results.append(f"Avg Shots on Target Against (Home - {home_team}): {avg_sotagainst_home:.2f}")
                 home_results.append(f"Avg Goals (Home - {home_team}): {avg_goals_home:.2f}")
                 home_results.append(f"Avg Goals Against (Home - {home_team}): {avg_goals_against_home:.2f}")
                 home_results.append(f"Goals per SoT (Home - {home_team}): {g_per_sot_home:.2f}")
+
+                # Expected values for next game
+                expected_goals_home = avg_goals_home
+                expected_goals_against_home = avg_goals_against_home
+                home_results.append(f"Expected Goals (Home - {home_team}): {expected_goals_home:.2f}")
+                home_results.append(f"Expected Goals Against (Home - {home_team}): {expected_goals_against_home:.2f}")
 
             if selected_stat == 'Over 0.5 Goals':
                 over_0_5_goals_home = (last_games_home['FTHG'] + last_games_home['FTAG']) > 0.5
@@ -65,21 +72,39 @@ def calculate_stats(league, home_team, away_team, num_games, selected_stat):
 
             if selected_stat == 'Corners':
                 avg_corners_home = last_games_home['HC'].mean()
+                avg_corners_against_home = last_games_home['AC'].mean()
                 home_results.append(f"Avg Corners (Home - {home_team}): {avg_corners_home:.2f}")
-                avg_cornersagainst_home = last_games_home['AC'].mean()
-                home_results.append(f"Avg Corners Against (Home - {home_team}): {avg_cornersagainst_home:.2f}")
+                home_results.append(f"Avg Corners Against (Home - {home_team}): {avg_corners_against_home:.2f}")
+
+                # Expected values for next game
+                expected_corners_home = avg_corners_home
+                expected_corners_against_home = avg_corners_against_home
+                home_results.append(f"Expected Corners (Home - {home_team}): {expected_corners_home:.2f}")
+                home_results.append(f"Expected Corners Against (Home - {home_team}): {expected_corners_against_home:.2f}")
 
             if selected_stat == 'YellowCards':
                 avg_yellow_home = last_games_home['HY'].mean()
+                avg_yellowcards_against_home = last_games_home['AY'].mean()
                 home_results.append(f"Avg Yellow Cards (Home - {home_team}): {avg_yellow_home:.2f}")
-                avg_yellowcardsagainst_home = last_games_home['AY'].mean()
-                home_results.append(f"Avg Yellow Cards Against (Home - {home_team}): {avg_yellowcardsagainst_home:.2f}")
+                home_results.append(f"Avg Yellow Cards Against (Home - {home_team}): {avg_yellowcards_against_home:.2f}")
+
+                # Expected values for next game
+                expected_yellow_home = avg_yellow_home
+                expected_yellowcards_against_home = avg_yellowcards_against_home
+                home_results.append(f"Expected Yellow Cards (Home - {home_team}): {expected_yellow_home:.2f}")
+                home_results.append(f"Expected Yellow Cards Against (Home - {home_team}): {expected_yellowcards_against_home:.2f}")
 
             if selected_stat == 'RedCards':
                 avg_red_home = last_games_home['HR'].mean()
+                avg_redcards_against_home = last_games_home['AR'].mean()
                 home_results.append(f"Avg Red Cards (Home - {home_team}): {avg_red_home:.2f}")
-                avg_redcardsagainst_home = last_games_home['AR'].mean()
-                home_results.append(f"Avg Red Cards Against (Home - {home_team}): {avg_redcardsagainst_home:.2f}")
+                home_results.append(f"Avg Red Cards Against (Home - {home_team}): {avg_redcards_against_home:.2f}")
+
+                # Expected values for next game
+                expected_red_home = avg_red_home
+                expected_redcards_against_home = avg_redcards_against_home
+                home_results.append(f"Expected Red Cards (Home - {home_team}): {expected_red_home:.2f}")
+                home_results.append(f"Expected Red Cards Against (Home - {home_team}): {expected_redcards_against_home:.2f}")
 
             if selected_stat == 'Shots on Target':
                 avg_sot_home = last_games_home['HST'].mean()
@@ -90,11 +115,10 @@ def calculate_stats(league, home_team, away_team, num_games, selected_stat):
                 results_str = ", ".join(home_lastresult)
                 home_results.append(f"Results (Home - {home_team}): {results_str}")
 
-
-
         else:
             home_results.append(f"No data available for home games of {home_team}.")
 
+    # Away Team Statistics
     if away_team:
         team_data_away = filtered_data[filtered_data['AwayTeam'] == away_team]
         last_games_away = team_data_away.tail(num_games)
@@ -103,14 +127,20 @@ def calculate_stats(league, home_team, away_team, num_games, selected_stat):
                 avg_goals_away = last_games_away['FTAG'].mean()
                 avg_goals_against_away = last_games_away['FTHG'].mean()
                 avg_sot_away = last_games_away['AST'].mean()
-                g_per_sot_away = avg_goals_away / avg_sot_away if avg_sot_away > 0 else 0
-                avg_sot_away = last_games_away['AST'].mean()
                 avg_sotagainst_away = last_games_away['HST'].mean()
+                g_per_sot_away = avg_goals_away / avg_sot_away if avg_sot_away > 0 else 0
+
                 away_results.append(f"Avg Shots on Target (Away - {away_team}): {avg_sot_away:.2f}")
-                away_results.append(f"Avg Shots on Target Against(Away - {away_team}): {avg_sotagainst_away:.2f}")
+                away_results.append(f"Avg Shots on Target Against (Away - {away_team}): {avg_sotagainst_away:.2f}")
                 away_results.append(f"Avg Goals (Away - {away_team}): {avg_goals_away:.2f}")
                 away_results.append(f"Avg Goals Against (Away - {away_team}): {avg_goals_against_away:.2f}")
                 away_results.append(f"Goals per SoT (Away - {away_team}): {g_per_sot_away:.2f}")
+
+                # Expected values for next game
+                expected_goals_away = avg_goals_away
+                expected_goals_against_away = avg_goals_against_away
+                away_results.append(f"Expected Goals (Away - {away_team}): {expected_goals_away:.2f}")
+                away_results.append(f"Expected Goals Against (Away - {away_team}): {expected_goals_against_away:.2f}")
 
             if selected_stat == 'Over 0.5 Goals':
                 over_0_5_goals_away = (last_games_away['FTHG'] + last_games_away['FTAG']) > 0.5
@@ -139,21 +169,39 @@ def calculate_stats(league, home_team, away_team, num_games, selected_stat):
 
             if selected_stat == 'Corners':
                 avg_corners_away = last_games_away['AC'].mean()
+                avg_corners_against_away = last_games_away['HC'].mean()
                 away_results.append(f"Avg Corners (Away - {away_team}): {avg_corners_away:.2f}")
-                avg_cornersagainst_away = last_games_away['HC'].mean()
-                away_results.append(f"Avg Corners Against (Away - {away_team}): {avg_cornersagainst_away:.2f}")
+                away_results.append(f"Avg Corners Against (Away - {away_team}): {avg_corners_against_away:.2f}")
+
+                # Expected values for next game
+                expected_corners_away = avg_corners_away
+                expected_corners_against_away = avg_corners_against_away
+                away_results.append(f"Expected Corners (Away - {away_team}): {expected_corners_away:.2f}")
+                away_results.append(f"Expected Corners Against (Away - {away_team}): {expected_corners_against_away:.2f}")
 
             if selected_stat == 'YellowCards':
                 avg_yellow_away = last_games_away['AY'].mean()
+                avg_yellowcards_against_away = last_games_away['HY'].mean()
                 away_results.append(f"Avg Yellow Cards (Away - {away_team}): {avg_yellow_away:.2f}")
-                avg_yellowcardsagainst_away = last_games_away['HY'].mean()
-                away_results.append(f"Avg Yellow Cards Against (Away - {away_team}): {avg_yellowcardsagainst_away:.2f}")
+                away_results.append(f"Avg Yellow Cards Against (Away - {away_team}): {avg_yellowcards_against_away:.2f}")
+
+                # Expected values for next game
+                expected_yellow_away = avg_yellow_away
+                expected_yellowcards_against_away = avg_yellowcards_against_away
+                away_results.append(f"Expected Yellow Cards (Away - {away_team}): {expected_yellow_away:.2f}")
+                away_results.append(f"Expected Yellow Cards Against (Away - {away_team}): {expected_yellowcards_against_away:.2f}")
 
             if selected_stat == 'RedCards':
                 avg_red_away = last_games_away['AR'].mean()
+                avg_redcards_against_away = last_games_away['HR'].mean()
                 away_results.append(f"Avg Red Cards (Away - {away_team}): {avg_red_away:.2f}")
-                avg_redcardsagainst_away = last_games_away['HR'].mean()
-                away_results.append(f"Avg Red Cards Against (Away - {away_team}): {avg_redcardsagainst_away:.2f}")
+                away_results.append(f"Avg Red Cards Against (Away - {away_team}): {avg_redcards_against_away:.2f}")
+
+                # Expected values for next game
+                expected_red_away = avg_red_away
+                expected_redcards_against_away = avg_redcards_against_away
+                away_results.append(f"Expected Red Cards (Away - {away_team}): {expected_red_away:.2f}")
+                away_results.append(f"Expected Red Cards Against (Away - {away_team}): {expected_redcards_against_away:.2f}")
 
             if selected_stat == 'Shots on Target':
                 avg_sot_away = last_games_away['AST'].mean()
@@ -164,14 +212,11 @@ def calculate_stats(league, home_team, away_team, num_games, selected_stat):
                 results_str = ", ".join(away_lastresult)
                 away_results.append(f"Results (Away - {away_team}): {results_str}")
 
-
-
-
-
         else:
             away_results.append(f"No data available for away games of {away_team}.")
 
     return home_results, away_results
+
 
 @app.route('/')
 def index():
