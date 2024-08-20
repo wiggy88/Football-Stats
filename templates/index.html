@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Statistics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const leagueSelect = document.getElementById('league');
+            const homeTeamSelect = document.getElementById('home_team');
+            const awayTeamSelect = document.getElementById('away_team');
+
+            leagueSelect.addEventListener('change', function () {
+                const selectedLeague = this.value;
+                fetch(`/teams?league=${selectedLeague}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        updateDropdown(homeTeamSelect, data);
+                        updateDropdown(awayTeamSelect, data);
+                    })
+                    .catch(error => console.error('Error fetching teams:', error));
+            });
+
+            function updateDropdown(dropdown, items) {
+                dropdown.innerHTML = ''; // Clear existing options
+                dropdown.append(new Option('--Select Team--', '')); // Default option
+                items.forEach(item => {
+                    const option = new Option(item, item);
+                    dropdown.add(option);
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Football Statistics</h1>
+
+        <form action="/calculate" method="post">
+            <div>
+                <label for="league">Select League:</label>
+                <select id="league" name="league">
+                    <option value="">--Select League--</option>
+                    {% for league in leagues %}
+                        <option value="{{ league }}">{{ league }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div>
+                <label for="home_team">Select Home Team:</label>
+                <select id="home_team" name="home_team">
+                    <option value="">--Select Home Team--</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="away_team">Select Away Team:</label>
+                <select id="away_team" name="away_team">
+                    <option value="">--Select Away Team--</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="num_games">Select Number of Games:</label>
+                <select id="num_games" name="num_games">
+                    {% for i in range(1, 21) %}
+                        <option value="{{ i }}">{{ i }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div>
+                <label for="stat">Select Statistic:</label>
+                <select id="stat" name="stat">
+                    <option value="">--Select Statistic--</option>
+                    {% for stat in stats %}
+                        <option value="{{ stat }}">{{ stat }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <button type="submit">Calculate</button>
+        </form>
+    </div>
+</body>
+</html>

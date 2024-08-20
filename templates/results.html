@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculation Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .result-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Calculation Results</h1>
+
+    <h2>Home Team Results</h2>
+    <div id="homeResults">
+        {% for result in home_results %}
+            <div class="result-box">{{ result }}</div>
+        {% endfor %}
+    </div>
+
+    <h2>Away Team Results</h2>
+    <div id="awayResults">
+        {% for result in away_results %}
+            <div class="result-box">{{ result }}</div>
+        {% endfor %}
+    </div>
+
+    <a href="/">Back to Form</a>
+</div>
+
+</body>
+</html>
