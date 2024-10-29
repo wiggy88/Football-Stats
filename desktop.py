@@ -7,10 +7,10 @@ from scipy.stats import poisson
 # streamlit run C:\Users\tilly\PycharmProjects\GoalPrediction\main\desktop.py
 
 # Load the datasets
-data = pd.read_csv("C:\\Users\\tilly\\OneDrive\\Desktop\\FootballData\\allleagues_backtestdata.csv")
-fixtures = pd.read_csv("C:\\Users\\tilly\\Downloads\\fixtures (3).csv")
-filtered_file_path = 'C:\\Users\\tilly\\PycharmProjects\\GoalPrediction\\data_collection\\btts_all2.csv'
-file_path = 'C:\\Users\\tilly\\PycharmProjects\\GoalPrediction\\data_collection\\over2_5_all1.csv'
+data = pd.read_csv("allleagues_backtestdata.csv")
+fixtures = pd.read_csv("fixtures (3).csv")
+filtered_file_path = 'btts_all2.csv'
+file_path = 'over2_5_all1.csv'
 
 # Ensure the 'Date' column is in datetime format
 data['Date'] = pd.to_datetime(data['Date'])
