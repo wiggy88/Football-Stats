@@ -5,7 +5,7 @@ import numpy as np
 from scipy.stats import poisson
 
 # Load the datasets
-data = pd.read_csv("C:\\Users\\tilly\\OneDrive\\Desktop\\FootballData\\allleagues_backtestdata.csv")
+data = pd.read_csv("allleagues_backtestdata.csv")
 fixtures = pd.read_csv("C:\\Users\\tilly\\Downloads\\fixtures (3).csv")
 filtered_file_path = 'C:\\Users\\tilly\\PycharmProjects\\GoalPrediction\\data_collection\\btts_all2.csv'
 file_path = 'C:\\Users\\tilly\\PycharmProjects\\GoalPrediction\\data_collection\\o2.5results_data1.csv'
