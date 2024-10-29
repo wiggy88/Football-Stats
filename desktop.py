@@ -4,11 +4,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.stats import poisson
 
+# streamlit run C:\Users\tilly\PycharmProjects\GoalPrediction\main\desktop.py
+
 # Load the datasets
-data = pd.read_csv("allleagues_backtestdata.csv")
-fixtures = pd.read_csv("fixtures (3).csv")
-filtered_file_path = "btts_all2.csv"
-file_path = "over2_5_all1.csv"
+data = pd.read_csv("C:\\Users\\tilly\\OneDrive\\Desktop\\FootballData\\allleagues_backtestdata.csv")
+fixtures = pd.read_csv("C:\\Users\\tilly\\Downloads\\fixtures (3).csv")
+filtered_file_path = 'C:\\Users\\tilly\\PycharmProjects\\GoalPrediction\\data_collection\\btts_all2.csv'
+file_path = 'C:\\Users\\tilly\\PycharmProjects\\GoalPrediction\\data_collection\\over2_5_all1.csv'
 
 # Ensure the 'Date' column is in datetime format
 data['Date'] = pd.to_datetime(data['Date'])
@@ -17,34 +19,63 @@ data['Date'] = pd.to_datetime(data['Date'])
 st.title('Football Team Statistics Dashboard')
 
 # Display fixtures and let the user select one
-selected_match = st.selectbox('Select a match', fixtures.apply(lambda x: f"{x['HomeTeam']} vs {x['AwayTeam']} - {x['Date']}", axis=1))
+selected_match = st.selectbox(
+    'Select a match',
+    fixtures.apply(lambda x: f"{x['HomeTeam']} vs {x['AwayTeam']} - {x['Date']}", axis=1)
+)
 
-# Extract selected teams
-home_team = fixtures[fixtures.apply(lambda x: f"{x['HomeTeam']} vs {x['AwayTeam']} - {x['Date']}", axis=1) == selected_match]['HomeTeam'].values[0]
-away_team = fixtures[fixtures.apply(lambda x: f"{x['HomeTeam']} vs {x['AwayTeam']} - {x['Date']}", axis=1) == selected_match]['AwayTeam'].values[0]
-
-# Create a selection box for leagues
-leagues = data['Div'].unique()
-selected_league = st.selectbox('Select a League:', leagues)
+# Extract selected teams and the league (Div) from the selected match
+selected_row = fixtures[fixtures.apply(lambda x: f"{x['HomeTeam']} vs {x['AwayTeam']} - {x['Date']}", axis=1) == selected_match]
+home_team = selected_row['HomeTeam'].values[0]
+away_team = selected_row['AwayTeam'].values[0]
+selected_league = selected_row['Div'].values[0]  # Automatically get the league (Div) for the selected match
 
 # Filter data for the selected league
 league_data = data[data['Div'] == selected_league]
 
+
+
+# Add a new column to calculate total goals for each match
+league_data['TotalGoals'] = league_data['FTHG'] + league_data['FTAG'].copy()
+
+# Check if both teams scored and assign the result as a Boolean to the 'Btts' column
+league_data['Btts'] = (league_data['FTHG'] > 0) & (league_data['FTAG'] > 0)
+
+
+# Add a new column to check if the match had over 2.5 goals
+league_data['Over_2.5_Goals'] = league_data['TotalGoals'] > 2.5
+home_odds = fixtures[fixtures['HomeTeam'] == home_team]['AvgH']
+away_odds = fixtures[fixtures['HomeTeam'] == home_team]['AvgA']
+draw_odds = fixtures[fixtures['HomeTeam'] == home_team]['AvgD']
+
 # Filter for matches on or after August 1, 2024
 start_date = pd.Timestamp('2024-08-01')
 league_data_filtered = league_data[league_data['Date'] >= start_date]
-
 # Filter data for the last 5 matches for the selected home team
 home_team_data_last_5 = league_data[league_data['HomeTeam'] == home_team].sort_values(by='Date').tail(5)
-
 # Filter data for the last 5 matches for the selected away team
 away_team_data_last_5 = league_data[league_data['AwayTeam'] == away_team].sort_values(by='Date').tail(5)
-
+# Filter the data for the selected home and away teams
+home_team_data = league_data[league_data['HomeTeam'] == home_team]
+away_team_data = league_data[league_data['AwayTeam'] == away_team]
+# Calculate the percentage of games over 2.5 goals in the last 5 games for the home team
+home_over_2_5_last_5 = (home_team_data_last_5['Over_2.5_Goals'].sum() / len(home_team_data_last_5)) * 100
+# Calculate the percentage of games over 2.5 goals in the last 5 games for the away team
+away_over_2_5_last_5 = (away_team_data_last_5['Over_2.5_Goals'].sum() / len(away_team_data_last_5)) * 100
+# Calculate the percentage of games over 2.5 goals for all games involving the home team
+home_over_2_5_overall = (home_team_data['Over_2.5_Goals'].sum() / len(home_team_data)) * 100
+# Calculate the percentage of games over 2.5 goals for all games involving the away team
+away_over_2_5_overall = (away_team_data['Over_2.5_Goals'].sum() / len(away_team_data)) * 100
 # Calculate average goals scored and conceded for the last 5 games
 home_goals_scored_last_5 = home_team_data_last_5['FTHG'].mean()
 home_goals_conceded_last_5 = home_team_data_last_5['FTAG'].mean()
 away_goals_scored_last_5 = away_team_data_last_5['FTAG'].mean()
 away_goals_conceded_last_5 = away_team_data_last_5['FTHG'].mean()
+
+#Btts
+home_btts_last_5 = (home_team_data_last_5['Btts'].sum() / len(home_team_data_last_5)) * 100
+away_btts_last_5 = (away_team_data_last_5['Btts'].sum() / len(home_team_data_last_5)) * 100
+
 
 firsthalfhome_goals_scored_last_5 = home_team_data_last_5['HTHG'].mean()
 firsthalfhome_goals_conceded_last_5 = home_team_data_last_5['HTAG'].mean()
@@ -72,31 +103,57 @@ sechalfhome_goals_conceded_overall = league_data[league_data['HomeTeam'] == home
 sechalfaway_goals_scored_overall = league_data[league_data['AwayTeam'] == away_team]['SAG'].mean()
 sechalfaway_goals_conceded_overall = league_data[league_data['AwayTeam'] == away_team]['SHG'].mean()
 
+home_goal_ratio_last_5 = home_team_data_last_5['FTHG'].sum() / home_team_data_last_5['HST'].sum() if home_team_data_last_5['HST'].sum() > 0 else 0
+away_goal_ratio_last_5 = away_team_data_last_5['FTAG'].sum() / away_team_data_last_5['AST'].sum() if away_team_data_last_5['AST'].sum() > 0 else 0
 
+# Calculate goal ratios for overall games
+home_goal_ratio_overall = league_data['FTHG'].sum() / league_data['HST'].sum() if league_data['HST'].sum() > 0 else 0
+away_goal_ratio_overall = league_data['FTAG'].sum() / league_data['AST'].sum() if league_data['AST'].sum() > 0 else 0
+
+
+# Assuming home_team_data_last_5 is already filtered for the last 5 matches of the home team
+sot_home_last5 = home_team_data_last_5['HST'].mean()
+sot_homeagainst_last5 = home_team_data_last_5['AST'].mean()
 # Display statistics for the last 5 games
-st.subheader(f'📊 **Average Stats for Last 5 Games** - {home_team} (Home) and {away_team} (Away)')
+st.subheader(f'📊 **Average Odds** - {home_team} (Home) and {away_team} (Away)')
+st.markdown(f"{home_team} & {away_team} Odds")
+col1, col2, col3 = st.columns(3)
+
+# Separate label and value for each metric
+col1.metric(label=f"{home_team} Average Home Odds", value=home_odds)
+col2.metric(label=f"{away_team} Average Away Odds", value=away_odds)
+col3.metric(label=f"{home_team} & {away_team} Draw odds", value=draw_odds)
 
 # Display Home Team Stats
 st.markdown(f"### 🏠 {home_team} (Home Stats)")
 col1, col2, col3 = st.columns(3)
 col1.metric(label="Avg Goals Scored", value=f"{home_goals_scored_last_5:.2f}")
-col1.metric(label="Avg 1st Half Goals Scored", value=f"{firsthalfhome_goals_scored_last_5:.2f}")
-col1.metric(label="Avg 2nd Half Goals Scored", value=f"{sechalfhome_goals_scored_last_5:.2f}")
-
 col2.metric(label="Avg Goals Conceded", value=f"{home_goals_conceded_last_5:.2f}")
+col1.metric(label="Avg 1st Half Goals Scored", value=f"{firsthalfhome_goals_scored_last_5:.2f}")
 col2.metric(label="Avg 1st Half Goals Conceded", value=f"{firsthalfhome_goals_conceded_last_5:.2f}")
+col1.metric(label="Avg 2nd Half Goals Scored", value=f"{sechalfhome_goals_scored_last_5:.2f}")
 col2.metric(label="Avg 2nd Half Goals Conceded", value=f"{sechalfhome_goals_conceded_last_5:.2f}")
+col1.metric(label="Goal Ratio (Goals per SoT)", value=f"{home_goal_ratio_last_5:.2f}")
+col2.metric(label="Goal Ratio Conceded", value=f"{(home_team_data_last_5['FTAG'].sum() / home_team_data_last_5['AST'].sum()):.2f}" if home_team_data_last_5['AST'].sum() > 0 else "0.00")
+col1.metric(label="Percentage of last 5 home games over 2.5 goals:", value=f"{home_over_2_5_last_5:.2f}%")
+col2.metric(label="Percentage of last 5 home games where Both teams scored:", value=f"{home_btts_last_5:.2f}%")
+col3.metric(label='Avg SoT', value=f"{sot_home_last5:.2f}")
+col3.metric(label='Avg SoT Against', value=f"{sot_homeagainst_last5:.2f}")
 
 # Display Away Team Stats
 st.markdown(f"### 🛫 {away_team} (Away Stats)")
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 col1.metric(label="Avg Goals Scored", value=f"{away_goals_scored_last_5:.2f}")
 col1.metric(label="Avg 1st Half Goals Scored", value=f"{firsthalfaway_goals_scored_last_5:.2f}")
 col1.metric(label="Avg 2nd Half Goals Scored", value=f"{sechalfaway_goals_scored_last_5:.2f}")
-
 col2.metric(label="Avg Goals Conceded", value=f"{away_goals_conceded_last_5:.2f}")
 col2.metric(label="Avg 1st Half Goals Conceded", value=f"{firsthalfaway_goals_conceded_last_5:.2f}")
 col2.metric(label="Avg 2nd Half Goals Conceded", value=f"{sechalfaway_goals_conceded_last_5:.2f}")
+col3.metric(label="Goal Ratio (Goals per SoT)", value=f"{away_goal_ratio_last_5:.2f}")
+col3.metric(label="Goal Ratio Conceded", value=f"{(away_team_data_last_5['FTHG'].sum() / away_team_data_last_5['HST'].sum()):.2f}" if away_team_data_last_5['HST'].sum() > 0 else "0.00")
+col1.metric(label="Percentage of last 5 away games over 2.5 goals:", value=f"{away_over_2_5_last_5:.2f}%")
+col2.metric(label="Percentage of last 5 away games where Both teams scored:", value=f"{away_btts_last_5:.2f}%")
+
 
 # Divider
 st.markdown("---")
@@ -110,7 +167,8 @@ col1, col2 = st.columns(2)
 col1.metric(label="Avg Goals Scored (Overall)", value=f"{home_goals_scored_overall:.2f}")
 col1.metric(label="Avg 1st Half Goals Scored (Overall)", value=f"{firsthalfhome_goals_scored_overall:.2f}")
 col1.metric(label="Avg 2nd Half Goals Scored (Overall)", value=f"{sechalfhome_goals_scored_overall:.2f}")
-
+col1.metric(label="Goal Ratio (Goals per SoT)", value=f"{home_goal_ratio_overall:.2f}")
+col1.metric(label="Percentage of all home games over 2.5 goals:", value=f"{home_over_2_5_overall:.2f}%")
 col2.metric(label="Avg Goals Conceded (Overall)", value=f"{home_goals_conceded_overall:.2f}")
 col2.metric(label="Avg 1st Half Goals Conceded (Overall)", value=f"{firsthalfhome_goals_conceded_overall:.2f}")
 col2.metric(label="Avg 2nd Half Goals Conceded (Overall)", value=f"{sechalfhome_goals_conceded_overall:.2f}")
@@ -121,7 +179,8 @@ col1, col2 = st.columns(2)
 col1.metric(label="Avg Goals Scored (Overall)", value=f"{away_goals_scored_overall:.2f}")
 col1.metric(label="Avg 1st Half Goals Scored (Overall)", value=f"{firsthalfaway_goals_scored_overall:.2f}")
 col1.metric(label="Avg 2nd Half Goals Scored (Overall)", value=f"{sechalfaway_goals_scored_overall:.2f}")
-
+col1.metric(label="Goal Ratio (Goals per SoT)", value=f"{away_goal_ratio_overall:.2f}")
+col1.metric(label="Percentage of all away games over 2.5 goals:", value=f"{away_over_2_5_overall:.2f}%")
 col2.metric(label="Avg Goals Conceded (Overall)", value=f"{away_goals_conceded_overall:.2f}")
 col2.metric(label="Avg 1st Half Goals Conceded (Overall)", value=f"{firsthalfaway_goals_conceded_overall:.2f}")
 col2.metric(label="Avg 2nd Half Goals Conceded (Overall)", value=f"{sechalfaway_goals_conceded_overall:.2f}")
@@ -130,7 +189,6 @@ col2.metric(label="Avg 2nd Half Goals Conceded (Overall)", value=f"{sechalfaway_
 st.markdown("---")
 st.subheader("📊 **BTTS and O2.5 Probabilities**")
 
-# Load BTTS data
 # Load BTTS data
 btts_data = pd.read_csv(filtered_file_path)
 
@@ -157,14 +215,11 @@ if not o2_5_prob_df.empty:
 else:
     st.warning("No O 2.5 data available for the selected match.")
 
-
-
-
 # Poisson Distribution Plot
 st.subheader("Poisson Distribution for Predicted Goals")
 
 # Simulate goal probabilities for both teams using Poisson
-goal_range = range(0, 10)  # Creates a range from 0 to 9
+goal_range = range(0, 6)  # Creates a range from 0 to 9
 
 home_poisson = [poisson.pmf(i, home_goals_scored_last_5) for i in goal_range]
 away_poisson = [poisson.pmf(i, away_goals_scored_last_5) for i in goal_range]
@@ -195,7 +250,7 @@ for home_goals in goal_range:
         scoreline_probs.append((home_goals, away_goals, prob))
 
 # Sort the scorelines by probability in descending order and pick the top 5
-scoreline_probs = sorted(scoreline_probs, key=lambda x: x[2], reverse=True)[:5]
+scoreline_probs = sorted(scoreline_probs, key=lambda x: x[2], reverse=True)[:4]
 
 # Display the top 5 most probable scorelines
 st.subheader(f'Top 5 Most Probable Scorelines for {home_team} vs {away_team}')
@@ -210,7 +265,6 @@ home_points = (home_team_data_last_5['FTHG'] > home_team_data_last_5['FTAG']).su
               (home_team_data_last_5['FTHG'] == home_team_data_last_5['FTAG']).sum()
 away_points = (away_team_data_last_5['FTAG'] > away_team_data_last_5['FTHG']).sum() * 3 + \
               (away_team_data_last_5['FTAG'] == away_team_data_last_5['FTHG']).sum()
-
 
 home_ppg = home_points / home_games_played
 away_ppg = away_points / away_games_played
@@ -250,8 +304,6 @@ st.write(f"🏠 Home Win Probability (Adjusted): {home_win_prob:.2%}")
 st.write(f"🛫 Away Win Probability (Adjusted): {away_win_prob:.2%}")
 st.write(f"🤝 Draw Probability (Adjusted): {draw_prob:.2%}")
 
-
-
 # Head-to-Head Comparison for the entire dataset
 head_to_head = league_data[((league_data['HomeTeam'] == home_team) & (league_data['AwayTeam'] == away_team)) |
                             ((league_data['HomeTeam'] == away_team) & (league_data['AwayTeam'] == home_team))]
@@ -281,18 +333,25 @@ if not head_to_head.empty:
 else:
     st.write("No matches found between the selected teams.")
 
+# Filter for the last 5 home games for the home team
+home_team_last_5 = league_data[(league_data['HomeTeam'] == home_team)].sort_values(by='Date', ascending=False).head(5)
 
-# Filter data from August 1st, 2024
-season_data = data[data['Date'] >= '2024-08-01']
+# Filter for the last 5 away games for the away team
+away_team_last_5 = league_data[(league_data['AwayTeam'] == away_team)].sort_values(by='Date', ascending=False).head(5)
 
-# Streamlit App
-st.title("Football League Table")
+# Display in Streamlit
+st.subheader(f"Last 5 Home Games for {home_team}")
+if not home_team_last_5.empty:
+    st.write(home_team_last_5[['Date', 'HomeTeam', 'AwayTeam', 'FTHG', 'FTAG']])
+else:
+    st.write(f"No recent home games for {home_team}.")
 
-# Select division
-division = st.selectbox("Select Division", season_data['Div'].unique())
+st.subheader(f"Last 5 Away Games for {away_team}")
+if not away_team_last_5.empty:
+    st.write(away_team_last_5[['Date', 'HomeTeam', 'AwayTeam', 'FTHG', 'FTAG']])
+else:
+    st.write(f"No recent away games for {away_team}.")
 
-# Filter data for the selected division
-league_data_filtered = season_data[season_data['Div'] == division]
 
 # Calculate the league table for home teams
 home_league_table = league_data_filtered.groupby('HomeTeam').agg(
@@ -346,23 +405,53 @@ league_table['Points'] = league_table['Wins'] * 3 + league_table['Draws']
 # Sort the combined table by Points and Goal Difference
 league_table['Goal_Difference'] = league_table['Goals_Scored'] - league_table['Goals_Conceded']
 league_table = league_table.sort_values(by=['Points', 'Goal_Difference'], ascending=False).reset_index(drop=True)
+# Assuming `home_team` and `away_team` are lists loaded earlier in the script
 
-# Display the combined table by default
+# Function to highlight the selected home and away teams in the table
+# Function to highlight only the home_team in the home table
+def highlight_home_team(row):
+    if row['HomeTeam'] in home_team:  # Highlight only the home team
+        return ['background-color: yellow'] * len(row)
+    else:
+        return [''] * len(row)
+
+# Function to highlight only the away_team in the away table
+def highlight_away_team(row):
+    if row['HomeTeam'] in away_team:  # Highlight only the away team
+        return ['background-color: green'] * len(row)
+    else:
+        return [''] * len(row)
+
+# Function to highlight both home and away teams in the combined table
+def highlight_selected_teams(row):
+    if row['HomeTeam'] in home_team or row['HomeTeam'] in away_team:
+        return ['background-color: yellow'] * len(row)
+    else:
+        return [''] * len(row)
+
+# Highlight selected teams in the combined table
+league_table_styled = league_table.style.apply(highlight_selected_teams, axis=1)
+
+# Highlight only the home team in the home table
+home_league_table_styled = home_league_table.style.apply(highlight_home_team, axis=1)
+
+# Highlight only the away team in the away table
+away_league_table_styled = away_league_table.style.apply(highlight_away_team, axis=1)
+
+# Display the combined table by default with highlighting
 st.write("**Combined League Table**")
-st.write(league_table)
+st.write(league_table_styled)
 
 # Create tabs for home and away tables
 tab1, tab2 = st.tabs(["Home Table", "Away Table"])
 
 with tab1:
     st.write("**Home League Table**")
-    st.write(home_league_table)
+    st.write(home_league_table_styled)
 
 with tab2:
     st.write("**Away League Table**")
-    st.write(away_league_table)
-
-
+    st.write(away_league_table_styled)
 
 # Ensure the 'Date' column is in datetime format
 data['Date'] = pd.to_datetime(data['Date'], errors='coerce')
@@ -431,6 +520,7 @@ season_data = data[(data['Date'] >= '2024-08-01')]
 initial_points = 1000
 elo_ratings = {team: initial_points for team in pd.concat([season_data['HomeTeam'], season_data['AwayTeam']]).unique()}
 
+
 # Function to calculate expected result
 def expected_result(home_elo, away_elo, home_field_advantage=0):
     return 1 / (1 + 10 ** ((away_elo - (home_elo + home_field_advantage)) / 400))
@@ -461,6 +551,7 @@ def calculate_elo(data, k=32, home_field_advantage=50):
         # Calculate the expected result (including home-field advantage)
         expected_home = expected_result(home_elo, away_elo, home_field_advantage=home_field_advantage)
 
+        # Determine actual result
         if home_score > away_score:  # Home Win
             actual_result = 1  # Home win
         elif away_score > home_score:  # Away Win
@@ -484,15 +575,35 @@ def calculate_elo(data, k=32, home_field_advantage=50):
     return pd.DataFrame(results)
 
 # Calculate Elo ratings from the data
-calculate_elo(season_data)
+elo_results = calculate_elo(season_data)
+
+# Add recent form analysis
+def recent_form(data, team, num_games=5):
+    recent_matches = data[(data['HomeTeam'] == team) | (data['AwayTeam'] == team)].tail(num_games)
+    recent_results = []
+    for index, row in recent_matches.iterrows():
+        if row['HomeTeam'] == team:
+            recent_results.append(row['FTHG'])  # Home goals
+        else:
+            recent_results.append(row['FTAG'])  # Away goals
+    return np.mean(recent_results), len(recent_results)
+
+# Analyze home and away performance
+def analyze_performance(data):
+    home_performance = {}
+    away_performance = {}
+    for team in elo_ratings.keys():
+        home_avg, home_count = recent_form(data[data['HomeTeam'] == team], team)
+        away_avg, away_count = recent_form(data[data['AwayTeam'] == team], team)
+        home_performance[team] = home_avg
+        away_performance[team] = away_avg
+    return home_performance, away_performance
+
+# Calculate home and away performance
+home_performance, away_performance = analyze_performance(season_data)
 
 # Streamlit UI
 st.title("Football Elo Rating System")
-
-# Select two teams from the available teams
-teams = list(elo_ratings.keys())
-home_team = st.selectbox("Select Home Team", teams)
-away_team = st.selectbox("Select Away Team", teams)
 
 # Display current Elo ratings for the selected teams
 st.write(f"**{home_team} Elo Rating:** {elo_ratings[home_team]:.2f}")
