@@ -151,7 +151,7 @@ col2.metric(label=f"{away_team} Average Away Odds", value=away_odds)
 col3.metric(label=f"{home_team} & {away_team} Draw odds", value=draw_odds)
 
 # Display Home Team Stats
-st.markdown(f"### 🏠 {home_team} (Home Stats)")
+st.markdown(f"### 🏠 {home_team} (Home Stats Average Last 5 Home games)")
 col1, col2, col3 = st.columns(3)
 col1.metric(label="Avg Goals Scored", value=f"{home_goals_scored_last_5:.2f}")
 col2.metric(label="Avg Goals Conceded", value=f"{home_goals_conceded_last_5:.2f}")
@@ -167,7 +167,7 @@ col3.metric(label='Avg SoT', value=f"{sot_home_last5:.2f}")
 col3.metric(label='Avg SoT Against', value=f"{sot_homeagainst_last5:.2f}")
 
 # Display Away Team Stats
-st.markdown(f"### 🛫 {away_team} (Away Stats)")
+st.markdown(f"### 🛫 {away_team} (Away Stats Average last 5 Away games)")
 col1, col2, col3 = st.columns(3)
 col1.metric(label="Avg Goals Scored", value=f"{away_goals_scored_last_5:.2f}")
 col2.metric(label="Avg Goals Conceded", value=f"{away_goals_conceded_last_5:.2f}")
