@@ -41,9 +41,14 @@ league_data['TotalGoals'] = league_data['FTHG'] + league_data['FTAG'].copy()
 # Check if both teams scored and assign the result as a Boolean to the 'Btts' column
 league_data['Btts'] = (league_data['FTHG'] > 0) & (league_data['FTAG'] > 0)
 
+league_data['HomeOver_2.5_Goals'] = league_data['FTHG'] > 2.5
+league_data['AwayOver_2.5_Goals'] = league_data['FTAG'] > 2.5
 
 # Add a new column to check if the match had over 2.5 goals
+league_data['Over_0.5_Goals'] = league_data['TotalGoals'] > 0.5
+league_data['Over_1.5_Goals'] = league_data['TotalGoals'] > 1.5
 league_data['Over_2.5_Goals'] = league_data['TotalGoals'] > 2.5
+league_data['Over_3.5_Goals'] = league_data['TotalGoals'] > 3.5
 home_odds = fixtures[fixtures['HomeTeam'] == home_team]['AvgH']
 away_odds = fixtures[fixtures['HomeTeam'] == home_team]['AvgA']
 draw_odds = fixtures[fixtures['HomeTeam'] == home_team]['AvgD']
@@ -51,30 +56,48 @@ draw_odds = fixtures[fixtures['HomeTeam'] == home_team]['AvgD']
 # Filter for matches on or after August 1, 2024
 start_date = pd.Timestamp('2024-08-01')
 league_data_filtered = league_data[league_data['Date'] >= start_date]
+
 # Filter data for the last 5 matches for the selected home team
 home_team_data_last_5 = league_data[league_data['HomeTeam'] == home_team].sort_values(by='Date').tail(5)
+
 # Filter data for the last 5 matches for the selected away team
 away_team_data_last_5 = league_data[league_data['AwayTeam'] == away_team].sort_values(by='Date').tail(5)
+
 # Filter the data for the selected home and away teams
 home_team_data = league_data[league_data['HomeTeam'] == home_team]
 away_team_data = league_data[league_data['AwayTeam'] == away_team]
-# Calculate the percentage of games over 2.5 goals in the last 5 games for the home team
-home_over_2_5_last_5 = (home_team_data_last_5['Over_2.5_Goals'].sum() / len(home_team_data_last_5)) * 100
-# Calculate the percentage of games over 2.5 goals in the last 5 games for the away team
-away_over_2_5_last_5 = (away_team_data_last_5['Over_2.5_Goals'].sum() / len(away_team_data_last_5)) * 100
-# Calculate the percentage of games over 2.5 goals for all games involving the home team
+
+# Calculate the percentage of games over x goals in the last 5 games
+home_over_0_5_last_5 = (home_team_data_last_5['Over_0.5_Goals'].sum() / len(home_team_data_last_5)) * 100
+away_over_0_5_last_5 = (away_team_data_last_5['Over_0.5_Goals'].sum() / len(away_team_data_last_5)) * 100
+home_over_0_5_overall = (home_team_data['Over_0.5_Goals'].sum() / len(home_team_data)) * 100
+away_over_0_5_overall = (away_team_data['Over_0.5_Goals'].sum() / len(away_team_data)) * 100
+home_over_1_5_last_5 = (home_team_data_last_5['Over_1.5_Goals'].sum() / len(home_team_data_last_5)) * 100
+away_over_1_5_last_5 = (away_team_data_last_5['Over_1.5_Goals'].sum() / len(away_team_data_last_5)) * 100
+home_over_1_5_overall = (home_team_data['Over_1.5_Goals'].sum() / len(home_team_data)) * 100
+away_over_1_5_overall = (away_team_data['Over_1.5_Goals'].sum() / len(away_team_data)) * 100
 home_over_2_5_overall = (home_team_data['Over_2.5_Goals'].sum() / len(home_team_data)) * 100
-# Calculate the percentage of games over 2.5 goals for all games involving the away team
 away_over_2_5_overall = (away_team_data['Over_2.5_Goals'].sum() / len(away_team_data)) * 100
+home_over_2_5_last_5 = (home_team_data_last_5['Over_2.5_Goals'].sum() / len(home_team_data_last_5)) * 100
+away_over_2_5_last_5 = (away_team_data_last_5['Over_2.5_Goals'].sum() / len(away_team_data_last_5)) * 100
+home_over_3_5_overall = (home_team_data['Over_3.5_Goals'].sum() / len(home_team_data)) * 100
+away_over_3_5_overall = (away_team_data['Over_3.5_Goals'].sum() / len(away_team_data)) * 100
+home_over_3_5_last_5 = (home_team_data['Over_3.5_Goals'].sum() / len(home_team_data)) * 100
+away_over_3_5_last_5 = (away_team_data['Over_3.5_Goals'].sum() / len(away_team_data)) * 100
+#Home
+home_over_2_5_last_5 = (home_team_data_last_5['HomeOver_2.5_Goals'].sum() / len(home_team_data_last_5)) * 100
+away_over_2_5_last_5 = (away_team_data_last_5['AwayOver_2.5_Goals'].sum() / len(home_team_data_last_5)) * 100
+
+#BTTS Calculations
+home_btts_last_5 = (home_team_data_last_5['Btts'].sum() / len(home_team_data_last_5)) * 100
+away_btts_last_5 = (away_team_data_last_5['Btts'].sum() / len(away_team_data_last_5)) * 100
+home_btts_overall = (home_team_data['Btts'].sum() / len(home_team_data)) * 100
+away_btts_overall = (away_team_data['Btts'].sum() / len(away_team_data)) * 100
 # Calculate average goals scored and conceded for the last 5 games
 home_goals_scored_last_5 = home_team_data_last_5['FTHG'].mean()
 home_goals_conceded_last_5 = home_team_data_last_5['FTAG'].mean()
 away_goals_scored_last_5 = away_team_data_last_5['FTAG'].mean()
 away_goals_conceded_last_5 = away_team_data_last_5['FTHG'].mean()
-
-#Btts
-home_btts_last_5 = (home_team_data_last_5['Btts'].sum() / len(home_team_data_last_5)) * 100
-away_btts_last_5 = (away_team_data_last_5['Btts'].sum() / len(home_team_data_last_5)) * 100
 
 
 firsthalfhome_goals_scored_last_5 = home_team_data_last_5['HTHG'].mean()
@@ -114,6 +137,9 @@ away_goal_ratio_overall = league_data['FTAG'].sum() / league_data['AST'].sum() i
 # Assuming home_team_data_last_5 is already filtered for the last 5 matches of the home team
 sot_home_last5 = home_team_data_last_5['HST'].mean()
 sot_homeagainst_last5 = home_team_data_last_5['AST'].mean()
+
+sot_away_last5 = away_team_data_last_5['AST'].mean()
+sot_awayagainst_last5 = away_team_data_last_5['HST'].mean()
 # Display statistics for the last 5 games
 st.subheader(f'📊 **Average Odds** - {home_team} (Home) and {away_team} (Away)')
 st.markdown(f"{home_team} & {away_team} Odds")
@@ -144,15 +170,17 @@ col3.metric(label='Avg SoT Against', value=f"{sot_homeagainst_last5:.2f}")
 st.markdown(f"### 🛫 {away_team} (Away Stats)")
 col1, col2, col3 = st.columns(3)
 col1.metric(label="Avg Goals Scored", value=f"{away_goals_scored_last_5:.2f}")
-col1.metric(label="Avg 1st Half Goals Scored", value=f"{firsthalfaway_goals_scored_last_5:.2f}")
-col1.metric(label="Avg 2nd Half Goals Scored", value=f"{sechalfaway_goals_scored_last_5:.2f}")
 col2.metric(label="Avg Goals Conceded", value=f"{away_goals_conceded_last_5:.2f}")
+col1.metric(label="Avg 1st Half Goals Scored", value=f"{firsthalfaway_goals_scored_last_5:.2f}")
 col2.metric(label="Avg 1st Half Goals Conceded", value=f"{firsthalfaway_goals_conceded_last_5:.2f}")
+col1.metric(label="Avg 2nd Half Goals Scored", value=f"{sechalfaway_goals_scored_last_5:.2f}")
 col2.metric(label="Avg 2nd Half Goals Conceded", value=f"{sechalfaway_goals_conceded_last_5:.2f}")
-col3.metric(label="Goal Ratio (Goals per SoT)", value=f"{away_goal_ratio_last_5:.2f}")
-col3.metric(label="Goal Ratio Conceded", value=f"{(away_team_data_last_5['FTHG'].sum() / away_team_data_last_5['HST'].sum()):.2f}" if away_team_data_last_5['HST'].sum() > 0 else "0.00")
-col1.metric(label="Percentage of last 5 away games over 2.5 goals:", value=f"{away_over_2_5_last_5:.2f}%")
-col2.metric(label="Percentage of last 5 away games where Both teams scored:", value=f"{away_btts_last_5:.2f}%")
+col1.metric(label="Goal Ratio (Goals per SoT)", value=f"{away_goal_ratio_last_5:.2f}")
+col2.metric(label="Goal Ratio Conceded", value=f"{(away_team_data_last_5['FTHG'].sum() / away_team_data_last_5['HST'].sum()):.2f}" if away_team_data_last_5['HST'].sum() > 0 else "0.00")
+col1.metric(label="Percentage of last 5 home games over 2.5 goals:", value=f"{away_over_2_5_last_5:.2f}%")
+col2.metric(label="Percentage of last 5 home games where Both teams scored:", value=f"{away_btts_last_5:.2f}%")
+col3.metric(label='Avg SoT', value=f"{sot_away_last5:.2f}")
+col3.metric(label='Avg SoT Against', value=f"{sot_awayagainst_last5:.2f}")
 
 
 # Divider
@@ -165,25 +193,33 @@ st.subheader(f'🌐 **Overall Average Stats** - {home_team} (Home) and {away_tea
 st.markdown(f"### 🏠 {home_team} (Home Overall Stats)")
 col1, col2 = st.columns(2)
 col1.metric(label="Avg Goals Scored (Overall)", value=f"{home_goals_scored_overall:.2f}")
-col1.metric(label="Avg 1st Half Goals Scored (Overall)", value=f"{firsthalfhome_goals_scored_overall:.2f}")
-col1.metric(label="Avg 2nd Half Goals Scored (Overall)", value=f"{sechalfhome_goals_scored_overall:.2f}")
-col1.metric(label="Goal Ratio (Goals per SoT)", value=f"{home_goal_ratio_overall:.2f}")
-col1.metric(label="Percentage of all home games over 2.5 goals:", value=f"{home_over_2_5_overall:.2f}%")
 col2.metric(label="Avg Goals Conceded (Overall)", value=f"{home_goals_conceded_overall:.2f}")
+col1.metric(label="Avg 1st Half Goals Scored (Overall)", value=f"{firsthalfhome_goals_scored_overall:.2f}")
 col2.metric(label="Avg 1st Half Goals Conceded (Overall)", value=f"{firsthalfhome_goals_conceded_overall:.2f}")
+col1.metric(label="Avg 2nd Half Goals Scored (Overall)", value=f"{sechalfhome_goals_scored_overall:.2f}")
 col2.metric(label="Avg 2nd Half Goals Conceded (Overall)", value=f"{sechalfhome_goals_conceded_overall:.2f}")
+col1.metric(label="Goal Ratio (Goals per SoT)", value=f"{home_goal_ratio_overall:.2f}")
+col2.metric(label="Goal Ratio (Goals Conceded per SoT)", value=f"{away_goal_ratio_overall:.2f}")
+col1.metric(label="Percentage of all home games over 2.5 goals:", value=f"{home_over_2_5_overall:.2f}%")
+
+
+
 
 # Away Overall Stats
 st.markdown(f"### 🛫 {away_team} (Away Overall Stats)")
 col1, col2 = st.columns(2)
 col1.metric(label="Avg Goals Scored (Overall)", value=f"{away_goals_scored_overall:.2f}")
-col1.metric(label="Avg 1st Half Goals Scored (Overall)", value=f"{firsthalfaway_goals_scored_overall:.2f}")
-col1.metric(label="Avg 2nd Half Goals Scored (Overall)", value=f"{sechalfaway_goals_scored_overall:.2f}")
-col1.metric(label="Goal Ratio (Goals per SoT)", value=f"{away_goal_ratio_overall:.2f}")
-col1.metric(label="Percentage of all away games over 2.5 goals:", value=f"{away_over_2_5_overall:.2f}%")
 col2.metric(label="Avg Goals Conceded (Overall)", value=f"{away_goals_conceded_overall:.2f}")
+col1.metric(label="Avg 1st Half Goals Scored (Overall)", value=f"{firsthalfaway_goals_scored_overall:.2f}")
 col2.metric(label="Avg 1st Half Goals Conceded (Overall)", value=f"{firsthalfaway_goals_conceded_overall:.2f}")
+col1.metric(label="Avg 2nd Half Goals Scored (Overall)", value=f"{sechalfaway_goals_scored_overall:.2f}")
 col2.metric(label="Avg 2nd Half Goals Conceded (Overall)", value=f"{sechalfaway_goals_conceded_overall:.2f}")
+col1.metric(label="Goal Ratio (Goals per SoT)", value=f"{away_goal_ratio_overall:.2f}")
+col2.metric(label="Goal Ratio (Goals Conceded per SoT)", value=f"{home_goal_ratio_overall:.2f}")
+col1.metric(label="Percentage of all away games over 2.5 goals:", value=f"{away_over_2_5_overall:.2f}%")
+
+
+
 
 # Divider for BTTS and O2.5 probabilities
 st.markdown("---")
@@ -615,3 +651,19 @@ if st.button("Update Ratings"):
 # Optional: Display all Elo ratings if needed
 if st.checkbox("Show All Elo Ratings"):
     st.write(pd.DataFrame(elo_ratings.items(), columns=['Team', 'Elo Rating']).sort_values(by='Elo Rating', ascending=False))
+
+# Data dictionary with goals as rows and probabilities as columns
+data = {
+    "Goal Threshold": ["Over 0.5", "Over 1.5", "Over 2.5", "Over 3.5"],
+    f"{home_team} Last 5 Games %": [home_over_0_5_last_5, home_over_1_5_last_5, home_over_2_5_last_5, home_over_3_5_last_5],
+    f"{away_team} Last 5 Games %": [away_over_0_5_last_5, away_over_1_5_last_5, away_over_2_5_last_5, away_over_3_5_last_5],
+    f"{home_team} Overall %": [home_over_0_5_overall, home_over_1_5_overall, home_over_2_5_overall, home_over_3_5_overall],
+    f"{away_team} Overall %": [away_over_0_5_overall, away_over_1_5_overall, away_over_2_5_overall, away_over_3_5_overall]
+}
+
+# Create the DataFrame
+probability_df = pd.DataFrame(data)
+
+# Display the DataFrame in Streamlit
+st.title("Goal Threshold Probabilities")
+st.table(probability_df)
