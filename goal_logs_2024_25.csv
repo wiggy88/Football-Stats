@@ -1,0 +1,262 @@
+Rk,Date,Round,Venue,Scorer,Opponent,Start,xG,PSxG,Body Part,Distance,Minute,Score,Goalkeeper,Assist,GCA1,Type,GCA2,Type,Notes,Team
+1,2024-08-17,Matchweek 1,Home,Kai Havertz,Wolves,Y,0.14,0.73,Head,9,25,0-0,José Sá,Bukayo Saka,Bukayo Saka,Pass (Live),Oleksandr Zinchenko,Pass (Live),,Arsenal
+2,2024-08-17,Matchweek 1,Home,Bukayo Saka,Wolves,Y,0.03,0.23,Left Foot,17,74,1-0,José Sá,Kai Havertz,Kai Havertz,Pass (Live),Thomas Partey,Pass (Dead),,Arsenal
+3,2024-08-24,Matchweek 2,Away,Leandro Trossard,Aston Villa,N,0.13,0.38,Right Foot,13,67,0-0,Emiliano Martínez,,Martin Ødegaard,Pass (Live),Bukayo Saka,Pass (Live),,Arsenal
+4,2024-08-24,Matchweek 2,Away,Thomas Partey,Aston Villa,Y,0.07,0.23,Right Foot,21,77,1-0,Emiliano Martínez,Bukayo Saka,Bukayo Saka,Pass (Live),Leandro Trossard,Pass (Live),,Arsenal
+5,2024-08-31,Matchweek 3,Home,Kai Havertz,Brighton,Y,0.57,0.25,Left Foot,25,38,0-0,Bart Verbruggen,Bukayo Saka,Bukayo Saka,Pass (Live),Jurriën Timber,Pass (Live),,Arsenal
+6,2024-09-15,Matchweek 4,Away,Gabriel Magalhães,Tottenham,Y,0.23,0.41,Head,4,64,0-0,Guglielmo Vicario,Bukayo Saka,Bukayo Saka,Pass (Dead),Bukayo Saka,Shot,,Arsenal
+7,2024-09-22,Matchweek 5,Away,Riccardo Calafiori,Manchester City,Y,0.02,0.28,Left Foot,25,22,0-1,Ederson,Gabriel Martinelli,Gabriel Martinelli,Pass (Live),Thomas Partey,Pass (Dead),,Arsenal
+8,2024-09-22,Matchweek 5,Away,Gabriel Magalhães,Manchester City,Y,0.32,0.97,Head,2,45+1,1-1,Ederson,Bukayo Saka,Bukayo Saka,Pass (Dead),Bukayo Saka,Pass (Live),,Arsenal
+9,2024-09-28,Matchweek 6,Home,Gabriel Martinelli,Leicester City,Y,0.20,0.83,Right Foot,15,20,0-0,Mads Hermansen,Jurriën Timber,Jurriën Timber,Pass (Live),Bukayo Saka,Pass (Live),,Arsenal
+10,2024-09-28,Matchweek 6,Home,Leandro Trossard,Leicester City,Y,0.60,0.98,Right Foot,11,45+1,1-0,Mads Hermansen,Gabriel Martinelli,Gabriel Martinelli,Pass (Live),Declan Rice,Pass (Live),,Arsenal
+11,2024-09-28,Matchweek 6,Home,Wilfred Ndidi(OG),Leicester City,Y,,,,,90+4,2-2,Mads Hermansen,,,,,,Own Goal,Arsenal
+12,2024-09-28,Matchweek 6,Home,Kai Havertz,Leicester City,Y,0.89,1.00,Other,2,90+9,3-2,Mads Hermansen,,Gabriel Jesus,Shot,,,,Arsenal
+13,2024-10-05,Matchweek 7,Home,Kai Havertz,Southampton,Y,0.13,0.52,Left Foot,18,58,0-1,Aaron Ramsdale,Bukayo Saka,Bukayo Saka,Pass (Live),,,,Arsenal
+14,2024-10-05,Matchweek 7,Home,Gabriel Martinelli,Southampton,N,0.41,0.55,Left Foot,2,68,1-1,Aaron Ramsdale,Bukayo Saka,Bukayo Saka,Pass (Live),Thomas Partey,Pass (Live),Volley,Arsenal
+15,2024-10-05,Matchweek 7,Home,Bukayo Saka,Southampton,Y,0.06,0.29,Right Foot,15,88,2-1,Aaron Ramsdale,,,,,,,Arsenal
+16,2024-10-27,Matchweek 9,Home,Bukayo Saka,Liverpool,Y*,0.17,0.71,Left Foot,9,9,0-0,Caoimhín Kelleher,Ben White,Bukayo Saka,Take-On,Ben White,Pass (Live),,Arsenal
+17,2024-10-27,Matchweek 9,Home,Mikel Merino,Liverpool,Y,0.38,0.88,Head,7,43,1-1,Caoimhín Kelleher,Declan Rice,Declan Rice,Pass (Dead),Thomas Partey,Fouled,,Arsenal
+1,2024-08-17,Matchweek 1,Away,Amadou Onana,West Ham,Y,0.55,0.94,Head,3,4,0-0,Alphonse Areola,Youri Tielemans,Youri Tielemans,Pass (Dead),,,,Aston Villa
+2,2024-08-17,Matchweek 1,Away,Jhon Durán,West Ham,N,0.15,0.14,Left Foot,14,79,1-1,Alphonse Areola,Jacob Ramsey,Jacob Ramsey,Pass (Live),Ian Maatsen,Pass (Live),,Aston Villa
+3,2024-08-31,Matchweek 3,Away,Amadou Onana,Leicester City,Y,0.39,0.98,Left Foot,5,28,0-0,Mads Hermansen,Ollie Watkins,Ollie Watkins,Shot,,,,Aston Villa
+4,2024-08-31,Matchweek 3,Away,Jhon Durán,Leicester City,N,0.15,0.65,Head,8,63,1-0,Mads Hermansen,Lucas Digne,Lucas Digne,Pass (Live),Jacob Ramsey,Pass (Live),,Aston Villa
+5,2024-09-14,Matchweek 4,Home,Ollie Watkins,Everton,Y,0.41,0.96,Head,2,36,0-2,Jordan Pickford,Lucas Digne,Lucas Digne,Pass (Live),Amadou Onana,Pass (Live),Deflected,Aston Villa
+6,2024-09-14,Matchweek 4,Home,Ollie Watkins,Everton,Y,0.13,0.43,Right Foot,10,58,1-2,Jordan Pickford,,Pau Torres,Pass (Live),Ross Barkley,Pass (Live),,Aston Villa
+7,2024-09-14,Matchweek 4,Home,Jhon Durán,Everton,N,0.02,0.31,Left Foot,32,76,2-2,Jordan Pickford,Ross Barkley,Ross Barkley,Pass (Live),Youri Tielemans,Pass (Live),,Aston Villa
+8,2024-09-21,Matchweek 5,Home,Ollie Watkins,Wolves,Y,0.13,0.39,Right Foot,8,73,0-1,Sam Johnstone,Morgan Rogers,Morgan Rogers,Pass (Live),,,Deflected,Aston Villa
+9,2024-09-21,Matchweek 5,Home,Ezri Konsa,Wolves,Y,0.21,0.37,Right Foot,4,88,1-1,Sam Johnstone,Youri Tielemans,Youri Tielemans,Pass (Live),Ian Maatsen,Pass (Live),Volley,Aston Villa
+10,2024-09-21,Matchweek 5,Home,Jhon Durán,Wolves,N,0.87,1.00,Left Foot,8,90+4,2-1,Sam Johnstone,Morgan Rogers,Morgan Rogers,Pass (Live),Ian Maatsen,Pass (Live),,Aston Villa
+11,2024-09-29,Matchweek 6,Away,Morgan Rogers,Ipswich Town,Y,0.13,0.70,Right Foot,17,15,0-1,Arijanet Muric,Ollie Watkins,Ollie Watkins,Pass (Live),Morgan Rogers,Pass (Live),,Aston Villa
+12,2024-09-29,Matchweek 6,Away,Ollie Watkins,Ipswich Town,Y,0.40,0.42,Head,5,32,1-1,Arijanet Muric,Leon Bailey,Leon Bailey,Pass (Live),Ezri Konsa,Pass (Live),,Aston Villa
+13,2024-10-19,Matchweek 8,Away,Morgan Rogers,Fulham,Y,0.04,0.33,Right Foot,27,9,0-1,Bernd Leno,Jacob Ramsey,Jacob Ramsey,Pass (Live),Youri Tielemans,Pass (Live),Deflected,Aston Villa
+14,2024-10-19,Matchweek 8,Away,Ollie Watkins,Fulham,Y,0.08,0.19,Head,10,59,1-1,Bernd Leno,Youri Tielemans,Youri Tielemans,Pass (Dead),Pau Torres,Shot,,Aston Villa
+15,2024-10-19,Matchweek 8,Away,Issa Diop(OG),Fulham,N,,,,,69,2-1,Bernd Leno,,,,,,Own Goal,Aston Villa
+16,2024-10-26,Matchweek 9,Home,Ross Barkley,Bournemouth,N,0.20,0.55,Right Foot,5,76,0-0,Mark Travers,Leon Bailey,Leon Bailey,Pass (Live),Ian Maatsen,Pass (Live),,Aston Villa
+1,2024-08-17,Matchweek 1,Away,Antoine Semenyo,Nott'ham Forest,Y,0.30,0.51,Left Foot,4,86,0-1,Matz Sels,,Justin Kluivert,Pass (Live),Milos Kerkez,Pass (Live),Volley,Bournemouth
+2,2024-08-25,Matchweek 2,Home,Marcus Tavernier,Newcastle Utd,Y,0.82,0.99,Right Foot,4,37,0-0,Nick Pope,Antoine Semenyo,Antoine Semenyo,Pass (Live),,,,Bournemouth
+3,2024-08-31,Matchweek 3,Away,Antoine Semenyo,Everton,Y,0.46,0.77,Right Foot,4,87,0-2,Jordan Pickford,Dango Ouattara,Dango Ouattara,Pass (Live),Justin Kluivert,Pass (Live),Volley,Bournemouth
+4,2024-08-31,Matchweek 3,Away,Lewis Cook,Everton,Y*,0.19,0.91,Head,6,90+2,1-2,Jordan Pickford,Luis Sinisterra,Luis Sinisterra,Pass (Live),Marcus Tavernier,Pass (Live),,Bournemouth
+5,2024-08-31,Matchweek 3,Away,Luis Sinisterra,Everton,N,0.33,0.21,Head,5,90+6,2-2,Jordan Pickford,Justin Kluivert,Justin Kluivert,Pass (Live),Marcus Tavernier,Pass (Live),,Bournemouth
+6,2024-09-30,Matchweek 6,Home,Evanilson,Southampton,Y,0.27,0.59,Right Foot,11,17,0-0,Aaron Ramsdale,Marcus Tavernier,Marcus Tavernier,Pass (Dead),Antoine Semenyo,Fouled,Volley,Bournemouth
+7,2024-09-30,Matchweek 6,Home,Dango Ouattara,Southampton,Y,0.42,0.61,Left Foot,8,32,1-0,Aaron Ramsdale,Lewis Cook,Lewis Cook,Shot,,,,Bournemouth
+8,2024-09-30,Matchweek 6,Home,Antoine Semenyo,Southampton,Y,0.06,0.21,Right Foot,17,39,2-0,Aaron Ramsdale,Lewis Cook,Antoine Semenyo,Take-On,Lewis Cook,Pass (Live),,Bournemouth
+9,2024-10-19,Matchweek 8,Home,Ryan Christie,Arsenal,N,0.11,0.46,Left Foot,15,70,0-0,David Raya,Justin Kluivert,Justin Kluivert,Pass (Live),Lewis Cook,Pass (Dead),,Bournemouth
+10,2024-10-19,Matchweek 8,Home,Justin Kluivert,Arsenal,N,0.79,0.80,Right Foot,13,79,1-0,David Raya,,Evanilson,Fouled,,,,Bournemouth
+11,2024-10-26,Matchweek 9,Away,Evanilson,Aston Villa,N,0.04,0.38,Head,13,90+6,0-1,Emiliano Martínez,Marcus Tavernier,Marcus Tavernier,Pass (Dead),Marcus Tavernier,Fouled,,Bournemouth
+1,2024-08-18,Matchweek 1,Home,Bryan Mbeumo,Crystal Palace,Y,0.09,0.35,Left Foot,12,29,0-0,Dean Henderson,Yoane Wissa,Yoane Wissa,Pass (Live),Christian Nørgaard,Pass (Live),,Brentford
+2,2024-08-18,Matchweek 1,Home,Yoane Wissa,Crystal Palace,Y,0.94,0.97,Left Foot,3,76,1-1,Dean Henderson,,Nathan Collins,Shot,,,,Brentford
+3,2024-08-31,Matchweek 3,Home,Bryan Mbeumo,Southampton,Y,0.33,0.97,Left Foot,11,43,0-0,Aaron Ramsdale,,Kevin Schade,Shot,,,,Brentford
+4,2024-08-31,Matchweek 3,Home,Bryan Mbeumo,Southampton,Y,0.40,0.98,Left Foot,13,65,1-0,Aaron Ramsdale,Mathias Jensen,Mathias Jensen,Pass (Live),Yoane Wissa,Pass (Live),,Brentford
+5,2024-08-31,Matchweek 3,Home,Yoane Wissa,Southampton,Y,0.54,0.87,Right Foot,1,69,2-0,Aaron Ramsdale,,Mathias Jensen,Pass (Dead),Bryan Mbeumo,Pass (Live),Volley,Brentford
+6,2024-09-14,Matchweek 4,Away,Yoane Wissa,Manchester City,Y,0.34,0.97,Head,4,1,0-0,Ederson,,Kristoffer Ajer,Pass (Live),Yoane Wissa,Pass (Live),,Brentford
+7,2024-09-21,Matchweek 5,Away,Bryan Mbeumo,Tottenham,Y,0.10,0.54,Left Foot,12,1,0-0,Guglielmo Vicario,Keane Lewis-Potter,Keane Lewis-Potter,Pass (Live),Yehor Yarmoliuk,Pass (Live),Volley,Brentford
+8,2024-09-28,Matchweek 6,Home,Bryan Mbeumo,West Ham,Y,0.13,0.73,Left Foot,15,1,0-0,Alphonse Areola,Fabio Carvalho,Fabio Carvalho,Pass (Live),Kristoffer Ajer,Pass (Live),Volley,Brentford
+9,2024-10-05,Matchweek 7,Home,Nathan Collins,Wolves,Y,0.53,0.66,Head,5,2,0-0,Sam Johnstone,Mikkel Damsgaard,Mikkel Damsgaard,Pass (Live),Bryan Mbeumo,Pass (Live),,Brentford
+10,2024-10-05,Matchweek 7,Home,Bryan Mbeumo,Wolves,Y,0.79,0.87,Left Foot,13,20,1-1,Sam Johnstone,,Nathan Collins,Fouled,Mikkel Damsgaard,Pass (Live),,Brentford
+11,2024-10-05,Matchweek 7,Home,Christian Nørgaard,Wolves,Y*,0.31,0.77,Right Foot,11,28,2-2,Sam Johnstone,Vitaly Janelt,Vitaly Janelt,Pass (Live),Bryan Mbeumo,Pass (Live),,Brentford
+12,2024-10-05,Matchweek 7,Home,Ethan Pinnock,Wolves,Y,0.03,0.20,Head,10,45+2,3-2,Sam Johnstone,Mikkel Damsgaard,Mikkel Damsgaard,Pass (Dead),,,,Brentford
+13,2024-10-05,Matchweek 7,Home,Fabio Carvalho,Wolves,N,0.89,0.99,Right Foot,5,90,4-2,Sam Johnstone,,Mikkel Damsgaard,Pass (Live),Yehor Yarmoliuk,Pass (Live),,Brentford
+14,2024-10-19,Matchweek 8,Away,Ethan Pinnock,Manchester Utd,Y,0.42,0.97,Head,5,45+5,0-0,André Onana,Mikkel Damsgaard,Mikkel Damsgaard,Pass (Dead),Christian Nørgaard,Pass (Live),,Brentford
+15,2024-10-26,Matchweek 9,Home,Yoane Wissa,Ipswich Town,Y,0.22,0.27,Left Foot,14,44,0-2,Arijanet Muric,Vitaly Janelt,Vitaly Janelt,Pass (Live),Keane Lewis-Potter,Pass (Live),,Brentford
+16,2024-10-26,Matchweek 9,Home,Harry Clarke(OG),Ipswich Town,Y,,,,,45+1,1-2,Arijanet Muric,,,,,,Own Goal,Brentford
+17,2024-10-26,Matchweek 9,Home,Bryan Mbeumo,Ipswich Town,Y,0.79,0.98,Left Foot,13,51,2-2,Arijanet Muric,,Keane Lewis-Potter,Fouled,Nathan Collins,Pass (Dead),,Brentford
+18,2024-10-26,Matchweek 9,Home,Bryan Mbeumo,Ipswich Town,Y,0.02,0.31,Left Foot,28,90+6,3-3,Arijanet Muric,Mads Roerslev,Mads Roerslev,Pass (Live),Nathan Collins,Pass (Live),,Brentford
+1,2024-08-17,Matchweek 1,Away,Kaoru Mitoma,Everton,Y,0.81,0.96,Right Foot,4,25,0-0,Jordan Pickford,Yankuba Minteh,Yankuba Minteh,Pass (Live),Yankuba Minteh,Take-On,,Brighton
+2,2024-08-17,Matchweek 1,Away,Danny Welbeck,Everton,Y,0.07,0.48,Left Foot,18,56,1-0,Jordan Pickford,Mats Wieffer,Mats Wieffer,Pass (Live),,,,Brighton
+3,2024-08-17,Matchweek 1,Away,Simon Adingra,Everton,N,0.07,0.47,Left Foot,17,86,2-0,Jordan Pickford,Danny Welbeck,Danny Welbeck,Pass (Live),Jack Hinshelwood,Pass (Live),,Brighton
+4,2024-08-24,Matchweek 2,Home,Danny Welbeck,Manchester Utd,Y,0.75,0.99,Right Foot,3,32,0-0,André Onana,Kaoru Mitoma,Kaoru Mitoma,Pass (Live),João Pedro,Pass (Live),,Brighton
+5,2024-08-24,Matchweek 2,Home,João Pedro,Manchester Utd,Y,0.46,0.95,Head,5,90+5,1-1,André Onana,Simon Adingra,Simon Adingra,Pass (Live),Yasin Ayari,Pass (Live),,Brighton
+6,2024-08-31,Matchweek 3,Away,João Pedro,Arsenal,Y,0.26,0.24,Left Foot,11,58,0-1,David Raya,,Yankuba Minteh,Shot,,,,Brighton
+7,2024-09-22,Matchweek 5,Home,Jack Hinshelwood,Nott'ham Forest,Y,0.12,0.48,Head,11,42,0-1,Matz Sels,Jan Paul van Hecke,Simon Adingra,Pass (Live),Kaoru Mitoma,Pass (Live),,Brighton
+8,2024-09-22,Matchweek 5,Home,Danny Welbeck,Nott'ham Forest,Y,0.06,0.27,Right Foot,27,45,1-1,Matz Sels,,Kaoru Mitoma,Fouled,Jack Hinshelwood,Pass (Live),,Brighton
+9,2024-09-28,Matchweek 6,Away,Georginio Rutter,Chelsea,Y,0.09,0.23,Head,15,7,0-0,Robert Sánchez,Carlos Baleba,,,,,,Brighton
+10,2024-09-28,Matchweek 6,Away,Carlos Baleba,Chelsea,Y,0.27,0.62,Right Foot,12,34,1-3,Robert Sánchez,,Carlos Baleba,Interception,,,,Brighton
+11,2024-10-06,Matchweek 7,Home,Yankuba Minteh,Tottenham,Y,0.25,0.62,Left Foot,9,48,0-2,Guglielmo Vicario,,Pervis Estupiñán,Pass (Live),Lewis Dunk,Pass (Live),,Brighton
+12,2024-10-06,Matchweek 7,Home,Georginio Rutter,Tottenham,Y,0.17,0.49,Left Foot,15,58,1-2,Guglielmo Vicario,Kaoru Mitoma,Kaoru Mitoma,Pass (Live),Pervis Estupiñán,Pass (Live),,Brighton
+13,2024-10-06,Matchweek 7,Home,Danny Welbeck,Tottenham,Y,0.56,0.98,Head,5,66,2-2,Guglielmo Vicario,,Georginio Rutter,Take-On,Joël Veltman,Pass (Dead),,Brighton
+14,2024-10-19,Matchweek 8,Away,Danny Welbeck,Newcastle Utd,Y,0.36,0.62,Right Foot,12,35,0-0,Nick Pope,Georginio Rutter,Georginio Rutter,Pass (Live),Danny Welbeck,Pass (Live),,Brighton
+15,2024-10-26,Matchweek 9,Home,Danny Welbeck,Wolves,Y*,0.45,0.62,Right Foot,10,45,0-0,José Sá,Georginio Rutter,Georginio Rutter,Pass (Live),Ferdi Kadioglu,Pass (Live),,Brighton
+16,2024-10-26,Matchweek 9,Home,Evan Ferguson,Wolves,N,0.08,0.44,Right Foot,16,85,1-0,José Sá,Tariq Lamptey,Tariq Lamptey,Pass (Live),,,,Brighton
+1,2024-08-25,Matchweek 2,Away,Nicolas Jackson,Wolves,Y,0.17,0.91,Head,5,2,0-0,José Sá,,Noni Madueke,Shot,,,,Chelsea
+2,2024-08-25,Matchweek 2,Away,Cole Palmer,Wolves,Y,0.04,0.04,Left Foot,28,45,1-1,José Sá,Nicolas Jackson,Nicolas Jackson,Pass (Live),Robert Sánchez,Pass (Dead),,Chelsea
+3,2024-08-25,Matchweek 2,Away,Noni Madueke,Wolves,Y,0.07,0.62,Left Foot,12,49,2-2,José Sá,Cole Palmer,Cole Palmer,Pass (Live),Nicolas Jackson,Pass (Live),Deflected,Chelsea
+4,2024-08-25,Matchweek 2,Away,Noni Madueke,Wolves,Y,0.07,0.18,Right Foot,9,58,3-2,José Sá,Cole Palmer,Cole Palmer,Pass (Live),Moisés Caicedo,Pass (Live),,Chelsea
+5,2024-08-25,Matchweek 2,Away,Noni Madueke,Wolves,Y,0.23,0.20,Right Foot,10,63,4-2,José Sá,Cole Palmer,Cole Palmer,Pass (Live),Cole Palmer,Take-On,,Chelsea
+6,2024-08-25,Matchweek 2,Away,João Félix,Wolves,N,0.15,0.76,Right Foot,17,80,5-2,José Sá,Pedro Neto,Pedro Neto,Pass (Live),Cole Palmer,Pass (Live),,Chelsea
+7,2024-09-01,Matchweek 3,Home,Nicolas Jackson,Crystal Palace,Y,0.97,1.00,Right Foot,2,25,0-0,Dean Henderson,Cole Palmer,Cole Palmer,Pass (Live),Noni Madueke,Pass (Live),,Chelsea
+8,2024-09-14,Matchweek 4,Away,Christopher Nkunku,Bournemouth,N,0.30,0.96,Right Foot,10,86,0-0,Mark Travers,Jadon Sancho,Christopher Nkunku,Take-On,Jadon Sancho,Pass (Live),,Chelsea
+9,2024-09-21,Matchweek 5,Away,Nicolas Jackson,West Ham,Y,0.22,0.32,Right Foot,9,4,0-0,Alphonse Areola,Jadon Sancho,Jadon Sancho,Pass (Live),Nicolas Jackson,Pass (Live),,Chelsea
+10,2024-09-21,Matchweek 5,Away,Nicolas Jackson,West Ham,Y,0.44,0.81,Right Foot,17,18,1-0,Alphonse Areola,Moisés Caicedo,Moisés Caicedo,Pass (Live),Enzo Fernández,Pass (Live),,Chelsea
+11,2024-09-21,Matchweek 5,Away,Cole Palmer,West Ham,Y,0.27,0.56,Left Foot,15,47,2-0,Alphonse Areola,Nicolas Jackson,Nicolas Jackson,Pass (Live),Moisés Caicedo,Pass (Live),,Chelsea
+12,2024-09-28,Matchweek 6,Home,Cole Palmer,Brighton,Y,0.22,0.95,Left Foot,17,21,0-1,Bart Verbruggen,Nicolas Jackson,Nicolas Jackson,Pass (Live),,,,Chelsea
+13,2024-09-28,Matchweek 6,Home,Cole Palmer,Brighton,Y,0.79,0.78,Left Foot,13,28,1-1,Bart Verbruggen,,Jadon Sancho,Fouled,Jadon Sancho,Pass (Live),,Chelsea
+14,2024-09-28,Matchweek 6,Home,Cole Palmer,Brighton,Y,0.05,0.12,Left Foot,30,31,2-1,Bart Verbruggen,,Noni Madueke,Fouled,,,,Chelsea
+15,2024-09-28,Matchweek 6,Home,Cole Palmer,Brighton,Y,0.18,0.75,Left Foot,12,41,3-2,Bart Verbruggen,Jadon Sancho,Jadon Sancho,Pass (Live),Enzo Fernández,Pass (Live),,Chelsea
+16,2024-10-06,Matchweek 7,Home,Noni Madueke,Nott'ham Forest,Y,0.03,0.35,Left Foot,16,57,0-1,Matz Sels,Cole Palmer,Cole Palmer,Pass (Live),Jadon Sancho,Pass (Live),Deflected,Chelsea
+17,2024-10-20,Matchweek 8,Away,Nicolas Jackson,Liverpool,Y,0.29,0.81,Right Foot,13,48,0-1,Caoimhín Kelleher,Moisés Caicedo,Moisés Caicedo,Pass (Live),Malo Gusto,Pass (Live),,Chelsea
+18,2024-10-27,Matchweek 9,Home,Nicolas Jackson,Newcastle Utd,Y,0.56,0.74,Right Foot,11,18,0-0,Nick Pope,Pedro Neto,Pedro Neto,Pass (Live),Pedro Neto,Take-On,,Chelsea
+19,2024-10-27,Matchweek 9,Home,Cole Palmer,Newcastle Utd,Y,0.05,0.07,Left Foot,18,47,1-1,Nick Pope,Roméo Lavia,Roméo Lavia,Pass (Live),Levi Colwill,Tackle,,Chelsea
+1,2024-08-18,Matchweek 1,Away,Ethan Pinnock(OG),Brentford,Y,,,,,56,0-1,Mark Flekken,,,,,,Own Goal,Crystal Palace
+2,2024-09-01,Matchweek 3,Away,Eberechi Eze,Chelsea,Y,0.06,0.78,Right Foot,22,53,0-1,Robert Sánchez,,Cheick Doucouré,Shot,,,,Crystal Palace
+3,2024-09-14,Matchweek 4,Home,Jean-Philippe Mateta,Leicester City,Y,0.50,0.97,Right Foot,5,47,0-2,Mads Hermansen,Tyrick Mitchell,Tyrick Mitchell,Pass (Live),Eberechi Eze,Pass (Live),,Crystal Palace
+4,2024-09-14,Matchweek 4,Home,Jean-Philippe Mateta,Leicester City,Y,0.79,0.82,Right Foot,13,90+2,1-2,Mads Hermansen,,Ismaila Sarr,Fouled,,,,Crystal Palace
+5,2024-09-28,Matchweek 6,Away,Marc Guéhi,Everton,Y*,0.18,0.67,Right Foot,4,10,0-0,Jordan Pickford,Maxence Lacroix,Maxence Lacroix,Pass (Live),Adam Wharton,Pass (Live),,Crystal Palace
+6,2024-10-27,Matchweek 9,Home,Jean-Philippe Mateta,Tottenham,Y,0.12,0.33,Left Foot,8,31,0-0,Guglielmo Vicario,Eberechi Eze,Eberechi Eze,Pass (Live),Daniel Muñoz,Pass (Live),Deflected,Crystal Palace
+1,2024-08-31,Matchweek 3,Home,Michael Keane,Bournemouth,Y,0.21,0.55,Right Foot,12,50,0-0,Kepa Arrizabalaga,Dominic Calvert-Lewin,Dominic Calvert-Lewin,Pass (Live),Jack Harrison,Pass (Live),,Everton
+2,2024-08-31,Matchweek 3,Home,Dominic Calvert-Lewin,Bournemouth,Y,0.33,0.31,Right Foot,11,57,1-0,Kepa Arrizabalaga,Dwight McNeil,Dwight McNeil,Pass (Live),Iliman Ndiaye,Pass (Live),,Everton
+3,2024-09-14,Matchweek 4,Away,Dwight McNeil,Aston Villa,Y,0.02,0.29,Left Foot,21,16,0-0,Emiliano Martínez,,Dwight McNeil,Tackle,,,,Everton
+4,2024-09-14,Matchweek 4,Away,Dominic Calvert-Lewin,Aston Villa,Y,0.41,0.85,Head,6,27,1-0,Emiliano Martínez,Dwight McNeil,Dwight McNeil,Pass (Dead),Jack Harrison,Fouled,,Everton
+5,2024-09-21,Matchweek 5,Away,Iliman Ndiaye,Leicester City,Y,0.09,0.80,Right Foot,17,12,0-0,Mads Hermansen,Ashley Young,Ashley Young,Pass (Live),Iliman Ndiaye,Pass (Live),,Everton
+6,2024-09-28,Matchweek 6,Home,Dwight McNeil,Crystal Palace,Y,0.02,0.43,Left Foot,27,47,0-1,Dean Henderson,Ashley Young,Ashley Young,Pass (Live),Ashley Young,Interception,,Everton
+7,2024-09-28,Matchweek 6,Home,Dwight McNeil,Crystal Palace,Y,0.10,0.16,Left Foot,6,54,1-1,Dean Henderson,,Orel Mangala,Fouled,Abdoulaye Doucouré,Tackle,Volley,Everton
+8,2024-10-19,Matchweek 8,Away,Iliman Ndiaye,Ipswich Town,Y,0.23,0.63,Right Foot,11,17,0-0,Arijanet Muric,,Dwight McNeil,Pass (Live),Ashley Young,Pass (Live),Deflected,Everton
+9,2024-10-19,Matchweek 8,Away,Michael Keane,Ipswich Town,Y,0.03,0.31,Left Foot,11,40,1-0,Arijanet Muric,Dwight McNeil,Dwight McNeil,Pass (Live),Dwight McNeil,Take-On,,Everton
+10,2024-10-26,Matchweek 9,Home,Beto,Fulham,N,0.34,0.61,Head,6,90+4,0-1,Bernd Leno,Ashley Young,Ashley Young,Pass (Live),Iliman Ndiaye,Pass (Live),Deflected,Everton
+1,2024-08-24,Matchweek 2,Home,Emile Smith Rowe,Leicester City,Y,0.48,0.35,Left Foot,11,18,0-0,Mads Hermansen,Adama Traoré,Adama Traoré,Pass (Live),Kenny Tete,Pass (Live),,Fulham
+2,2024-08-24,Matchweek 2,Home,Alex Iwobi,Leicester City,Y,0.16,0.24,Left Foot,9,70,1-1,Mads Hermansen,Antonee Robinson,Antonee Robinson,Pass (Live),Tom Cairney,Pass (Live),,Fulham
+3,2024-08-31,Matchweek 3,Away,Adama Traoré,Ipswich Town,Y,0.15,0.49,Right Foot,10,32,0-1,Arijanet Muric,Antonee Robinson,Antonee Robinson,Pass (Live),Alex Iwobi,Pass (Live),,Fulham
+4,2024-09-14,Matchweek 4,Home,Raúl Jiménez,West Ham,Y,0.21,0.29,Left Foot,5,24,0-0,Alphonse Areola,Emile Smith Rowe,Emile Smith Rowe,Pass (Live),Andreas Pereira,Pass (Live),,Fulham
+5,2024-09-21,Matchweek 5,Home,Raúl Jiménez,Newcastle Utd,Y,0.07,0.59,Right Foot,14,5,0-0,Nick Pope,Adama Traoré,Adama Traoré,Pass (Live),Raúl Jiménez,Pass (Live),Volley,Fulham
+6,2024-09-21,Matchweek 5,Home,Emile Smith Rowe,Newcastle Utd,Y,0.27,0.39,Right Foot,10,22,1-0,Nick Pope,Alex Iwobi,Alex Iwobi,Pass (Live),Emile Smith Rowe,Pass (Live),,Fulham
+7,2024-09-21,Matchweek 5,Home,Reiss Nelson,Newcastle Utd,N,0.31,0.18,Right Foot,14,90+2,2-1,Nick Pope,Rodrigo Muniz,,,,,,Fulham
+8,2024-09-28,Matchweek 6,Away,Raúl Jiménez,Nott'ham Forest,Y,0.79,0.67,Right Foot,13,51,0-0,Matz Sels,,Andreas Pereira,Fouled,Alex Iwobi,Pass (Live),,Fulham
+9,2024-10-05,Matchweek 7,Away,Andreas Pereira,Manchester City,Y,0.59,0.98,Right Foot,5,26,0-0,Ederson,Raúl Jiménez,Raúl Jiménez,Pass (Live),Alex Iwobi,Pass (Live),Volley,Fulham
+10,2024-10-05,Matchweek 7,Away,Rodrigo Muniz,Manchester City,N,0.22,0.83,Right Foot,12,88,1-3,Ederson,Reiss Nelson,Reiss Nelson,Pass (Live),Emile Smith Rowe,Pass (Live),Deflected,Fulham
+11,2024-10-19,Matchweek 8,Home,Raúl Jiménez,Aston Villa,Y,0.06,0.38,Left Foot,18,5,0-0,Emiliano Martínez,Bernd Leno,Bernd Leno,Pass (Live),Calvin Bassey,Pass (Live),,Fulham
+12,2024-10-26,Matchweek 9,Away,Alex Iwobi,Everton,Y,0.07,0.57,Right Foot,18,61,0-0,Jordan Pickford,Emile Smith Rowe,Emile Smith Rowe,Pass (Live),Emile Smith Rowe,Take-On,,Fulham
+1,2024-08-24,Matchweek 2,Away,Sammie Szmodics,Manchester City,Y,0.29,0.29,Right Foot,21,7,0-0,Ederson,Ben Johnson,Ben Johnson,Pass (Live),Omari Hutchinson,Pass (Live),,Ipswich Town
+2,2024-08-31,Matchweek 3,Home,Liam Delap,Fulham,Y,0.05,0.20,Right Foot,26,15,0-0,Bernd Leno,Leif Davis,Leif Davis,Pass (Live),Leif Davis,Take-On,,Ipswich Town
+3,2024-09-21,Matchweek 5,Away,Sam Morsy,Southampton,Y*,0.04,0.58,Right Foot,22,90+5,0-1,Aaron Ramsdale,,George Hirst,Shot,,,Deflected,Ipswich Town
+4,2024-09-29,Matchweek 6,Home,Liam Delap,Aston Villa,Y,0.12,0.34,Left Foot,13,8,0-0,Emiliano Martínez,Jack Clarke,Jack Clarke,Pass (Live),Kalvin Phillips,Pass (Live),,Ipswich Town
+5,2024-09-29,Matchweek 6,Home,Liam Delap,Aston Villa,Y,0.29,0.73,Left Foot,11,72,1-2,Emiliano Martínez,Omari Hutchinson,Liam Delap,Take-On,Omari Hutchinson,Pass (Live),,Ipswich Town
+6,2024-10-05,Matchweek 7,Away,Liam Delap,West Ham,Y,0.04,0.07,Right Foot,21,6,0-1,Alphonse Areola,,,,,,,Ipswich Town
+7,2024-10-26,Matchweek 9,Away,Sammie Szmodics,Brentford,Y,0.19,0.25,Right Foot,18,28,0-0,Mark Flekken,George Hirst,George Hirst,Pass (Live),Kalvin Phillips,Pass (Live),,Ipswich Town
+8,2024-10-26,Matchweek 9,Away,George Hirst,Brentford,Y,0.27,0.69,Right Foot,12,31,1-0,Mark Flekken,Conor Chaplin,Conor Chaplin,Pass (Live),,,,Ipswich Town
+9,2024-10-26,Matchweek 9,Away,Liam Delap,Brentford,N,0.14,0.60,Left Foot,10,86,2-3,Mark Flekken,Leif Davis,Leif Davis,Pass (Live),Cameron Burgess,Pass (Live),Volley,Ipswich Town
+1,2024-08-19,Matchweek 1,Home,Jamie Vardy,Tottenham,Y*,0.43,0.98,Head,5,57,0-1,Guglielmo Vicario,Abdul Fatawu Issahaku,Abdul Fatawu Issahaku,Pass (Live),Victor Bernth Kristiansen,Pass (Live),,Leicester City
+2,2024-08-24,Matchweek 2,Away,Wout Faes,Fulham,Y,0.20,0.94,Head,4,38,0-1,Bernd Leno,Facundo Buonanotte,Facundo Buonanotte,Pass (Dead),Jamie Vardy,Pass (Live),,Leicester City
+3,2024-08-31,Matchweek 3,Home,Facundo Buonanotte,Aston Villa,N,0.15,0.34,Left Foot,8,73,0-2,Emiliano Martínez,Wilfred Ndidi,Stephy Mavididi,Pass (Live),Stephy Mavididi,Take-On,Volley,Leicester City
+4,2024-09-14,Matchweek 4,Away,Jamie Vardy,Crystal Palace,Y*,0.64,0.99,Right Foot,9,21,0-0,Dean Henderson,Wilfred Ndidi,Jamie Vardy,Take-On,Wilfred Ndidi,Pass (Live),,Leicester City
+5,2024-09-14,Matchweek 4,Away,Stephy Mavididi,Crystal Palace,Y,0.26,0.90,Right Foot,10,46,1-0,Dean Henderson,Wilfred Ndidi,Wilfred Ndidi,Pass (Live),,,Volley,Leicester City
+6,2024-09-21,Matchweek 5,Home,Stephy Mavididi,Everton,Y,0.21,0.95,Right Foot,4,73,0-1,Jordan Pickford,,,,,,Deflected,Leicester City
+7,2024-09-28,Matchweek 6,Away,James Justin,Arsenal,Y,0.03,0.10,Head,14,47,0-2,David Raya,Facundo Buonanotte,Facundo Buonanotte,Pass (Dead),Jamie Vardy,Fouled,Deflected,Leicester City
+8,2024-09-28,Matchweek 6,Away,James Justin,Arsenal,Y,0.05,0.07,Right Foot,14,63,1-2,David Raya,Wilfred Ndidi,Wilfred Ndidi,Pass (Live),Stephy Mavididi,Pass (Live),Volley,Leicester City
+9,2024-10-05,Matchweek 7,Home,Facundo Buonanotte,Bournemouth,Y,0.23,0.69,Left Foot,12,16,0-0,Kepa Arrizabalaga,James Justin,Facundo Buonanotte,Take-On,James Justin,Pass (Live),,Leicester City
+10,2024-10-19,Matchweek 8,Away,Facundo Buonanotte,Southampton,Y,0.95,0.99,Right Foot,2,64,0-2,Aaron Ramsdale,Abdul Fatawu Issahaku,Abdul Fatawu Issahaku,Pass (Live),Harry Winks,Pass (Live),Volley,Leicester City
+11,2024-10-19,Matchweek 8,Away,Jamie Vardy,Southampton,Y*,0.79,0.96,Right Foot,13,74,1-2,Aaron Ramsdale,,Jamie Vardy,Fouled,Abdul Fatawu Issahaku,Shot,,Leicester City
+12,2024-10-19,Matchweek 8,Away,Jordan Ayew,Southampton,N,0.10,0.29,Right Foot,16,90+8,2-2,Aaron Ramsdale,Harry Winks,Harry Winks,Pass (Dead),,,Deflected,Leicester City
+13,2024-10-25,Matchweek 9,Home,Jamie Vardy,Nott'ham Forest,Y*,0.52,0.97,Right Foot,4,23,0-1,Matz Sels,Harry Winks,Harry Winks,Pass (Live),Stephy Mavididi,Pass (Live),Volley,Leicester City
+1,2024-08-17,Matchweek 1,Away,Diogo Jota,Ipswich Town,Y,0.44,0.92,Left Foot,11,60,0-0,Christian Walton,Mohamed Salah,Mohamed Salah,Pass (Live),Trent Alexander-Arnold,Pass (Live),,Liverpool
+2,2024-08-17,Matchweek 1,Away,Mohamed Salah,Ipswich Town,Y,0.41,0.82,Left Foot,7,65,1-0,Christian Walton,,Virgil van Dijk,Pass (Live),Ryan Gravenberch,Pass (Live),,Liverpool
+3,2024-08-25,Matchweek 2,Home,Luis Díaz,Brentford,Y,0.42,0.24,Left Foot,16,13,0-0,Mark Flekken,Diogo Jota,Diogo Jota,Pass (Live),,,,Liverpool
+4,2024-08-25,Matchweek 2,Home,Mohamed Salah,Brentford,Y,0.43,0.58,Left Foot,12,70,1-0,Mark Flekken,Luis Díaz,Luis Díaz,Pass (Live),Alexis Mac Allister,Pass (Live),,Liverpool
+5,2024-09-01,Matchweek 3,Away,Luis Díaz,Manchester Utd,Y,0.29,0.95,Head,5,35,0-0,André Onana,Mohamed Salah,Mohamed Salah,Pass (Live),Ryan Gravenberch,Pass (Live),,Liverpool
+6,2024-09-01,Matchweek 3,Away,Luis Díaz,Manchester Utd,Y,0.32,0.72,Right Foot,15,42,1-0,André Onana,Mohamed Salah,Mohamed Salah,Pass (Live),Luis Díaz,Pass (Live),,Liverpool
+7,2024-09-01,Matchweek 3,Away,Mohamed Salah,Manchester Utd,Y,0.20,0.77,Left Foot,16,56,2-0,André Onana,Dominik Szoboszlai,Dominik Szoboszlai,Pass (Live),Alexis Mac Allister,Pass (Live),,Liverpool
+8,2024-09-21,Matchweek 5,Home,Luis Díaz,Bournemouth,Y,0.13,0.86,Right Foot,15,26,0-0,Kepa Arrizabalaga,Ibrahima Konaté,Ibrahima Konaté,Pass (Live),Caoimhín Kelleher,Pass (Live),,Liverpool
+9,2024-09-21,Matchweek 5,Home,Luis Díaz,Bournemouth,Y,0.24,0.26,Left Foot,9,28,1-0,Kepa Arrizabalaga,Trent Alexander-Arnold,Trent Alexander-Arnold,Pass (Live),Mohamed Salah,Pass (Live),,Liverpool
+10,2024-09-21,Matchweek 5,Home,Darwin Núñez,Bournemouth,Y,0.06,0.64,Left Foot,16,37,2-0,Kepa Arrizabalaga,Mohamed Salah,Mohamed Salah,Pass (Live),Darwin Núñez,Pass (Live),,Liverpool
+11,2024-09-28,Matchweek 6,Away,Ibrahima Konaté,Wolves,Y,0.10,0.12,Head,8,45+2,0-0,Sam Johnstone,Diogo Jota,Diogo Jota,Pass (Live),Ryan Gravenberch,Pass (Live),,Liverpool
+12,2024-09-28,Matchweek 6,Away,Mohamed Salah,Wolves,Y,0.79,0.60,Left Foot,13,61,1-1,Sam Johnstone,,Diogo Jota,Fouled,Luis Díaz,Pass (Live),,Liverpool
+13,2024-10-05,Matchweek 7,Away,Diogo Jota,Crystal Palace,Y,0.25,0.23,Right Foot,11,9,0-0,Dean Henderson,Cody Gakpo,Cody Gakpo,Pass (Live),Kostas Tsimikas,Pass (Live),,Liverpool
+14,2024-10-20,Matchweek 8,Home,Mohamed Salah,Chelsea,Y,0.79,0.79,Left Foot,13,29,0-0,Robert Sánchez,,Curtis Jones,Fouled,Mohamed Salah,Shot,,Liverpool
+15,2024-10-20,Matchweek 8,Home,Curtis Jones,Chelsea,Y,0.69,0.97,Right Foot,3,51,1-1,Robert Sánchez,Mohamed Salah,Mohamed Salah,Pass (Live),Dominik Szoboszlai,Pass (Live),,Liverpool
+16,2024-10-27,Matchweek 9,Away,Virgil van Dijk,Arsenal,Y*,0.25,0.72,Head,5,18,0-1,David Raya,Luis Díaz,Luis Díaz,Pass (Live),Trent Alexander-Arnold,Pass (Dead),,Liverpool
+17,2024-10-27,Matchweek 9,Away,Mohamed Salah,Arsenal,Y,0.29,0.79,Left Foot,13,81,1-2,David Raya,Darwin Núñez,Darwin Núñez,Pass (Live),Trent Alexander-Arnold,Pass (Live),,Liverpool
+1,2024-08-18,Matchweek 1,Away,Erling Haaland,Chelsea,Y,0.17,0.18,Left Foot,9,18,0-0,Robert Sánchez,Bernardo Silva,Erling Haaland,Take-On,Bernardo Silva,Pass (Live),,Manchester City
+2,2024-08-18,Matchweek 1,Away,Mateo Kovačić,Chelsea,Y,0.08,0.07,Right Foot,23,84,1-0,Robert Sánchez,,Mateo Kovačić,Take-On,,,,Manchester City
+3,2024-08-24,Matchweek 2,Home,Erling Haaland,Ipswich Town,Y,0.79,0.84,Left Foot,13,12,0-1,Arijanet Muric,,Sávio,Fouled,Manuel Akanji,Pass (Live),,Manchester City
+4,2024-08-24,Matchweek 2,Home,Kevin De Bruyne,Ipswich Town,Y*,0.59,0.97,Left Foot,26,14,1-1,Arijanet Muric,Sávio,Sávio,Pass (Live),Sávio,Tackle,,Manchester City
+5,2024-08-24,Matchweek 2,Home,Erling Haaland,Ipswich Town,Y,0.21,0.92,Left Foot,13,16,2-1,Arijanet Muric,Kevin De Bruyne,Erling Haaland,Take-On,Kevin De Bruyne,Pass (Live),,Manchester City
+6,2024-08-24,Matchweek 2,Home,Erling Haaland,Ipswich Town,Y,0.04,0.31,Left Foot,25,88,3-1,Arijanet Muric,,Bernardo Silva,Pass (Live),İlkay Gündoğan,Pass (Live),,Manchester City
+7,2024-08-31,Matchweek 3,Away,Erling Haaland,West Ham,Y,0.46,0.88,Left Foot,15,10,0-0,Alphonse Areola,Bernardo Silva,Bernardo Silva,Pass (Live),,,,Manchester City
+8,2024-08-31,Matchweek 3,Away,Erling Haaland,West Ham,Y,0.08,0.28,Left Foot,16,30,1-1,Alphonse Areola,Rico Lewis,Rico Lewis,Pass (Live),Mateo Kovačić,Pass (Live),,Manchester City
+9,2024-08-31,Matchweek 3,Away,Erling Haaland,West Ham,Y,0.55,0.66,Left Foot,20,83,2-1,Łukasz Fabiański,Matheus Nunes,Matheus Nunes,Pass (Live),Matheus Nunes,Take-On,,Manchester City
+10,2024-09-14,Matchweek 4,Home,Erling Haaland,Brentford,Y,0.07,0.50,Right Foot,10,19,0-1,Mark Flekken,,,,,,Deflected,Manchester City
+11,2024-09-14,Matchweek 4,Home,Erling Haaland,Brentford,Y,0.38,0.22,Left Foot,15,32,1-1,Mark Flekken,Ederson,Ederson,Pass (Live),John Stones,Pass (Live),,Manchester City
+12,2024-09-22,Matchweek 5,Home,Erling Haaland,Arsenal,Y,0.51,0.52,Left Foot,15,9,0-0,David Raya,Sávio,Sávio,Pass (Live),Sávio,Take-On,,Manchester City
+13,2024-09-22,Matchweek 5,Home,John Stones,Arsenal,N,0.18,0.43,Left Foot,6,90+8,1-2,David Raya,,Mateo Kovačić,Shot,,,,Manchester City
+14,2024-09-28,Matchweek 6,Away,Joško Gvardiol,Newcastle Utd,Y,0.08,0.68,Right Foot,10,35,0-0,Nick Pope,Jack Grealish,Joško Gvardiol,Take-On,Jack Grealish,Pass (Live),Deflected,Manchester City
+15,2024-10-05,Matchweek 7,Home,Mateo Kovačić,Fulham,Y,0.07,0.39,Right Foot,16,32,0-1,Bernd Leno,,Jack Grealish,Tackle,,,Deflected,Manchester City
+16,2024-10-05,Matchweek 7,Home,Mateo Kovačić,Fulham,Y,0.13,0.15,Right Foot,20,47,1-1,Bernd Leno,Bernardo Silva,Bernardo Silva,Pass (Live),Phil Foden,Pass (Live),,Manchester City
+17,2024-10-05,Matchweek 7,Home,Jeremy Doku,Fulham,N,0.06,0.07,Right Foot,21,82,2-1,Bernd Leno,Rico Lewis,Rico Lewis,Pass (Live),Erling Haaland,Pass (Live),,Manchester City
+18,2024-10-20,Matchweek 8,Away,Joško Gvardiol,Wolves,Y,0.02,0.12,Right Foot,24,33,0-1,José Sá,Jeremy Doku,Jeremy Doku,Pass (Live),Joško Gvardiol,Pass (Live),,Manchester City
+19,2024-10-20,Matchweek 8,Away,John Stones,Wolves,Y,0.26,0.40,Head,4,90+5,1-1,José Sá,Phil Foden,Phil Foden,Pass (Dead),Phil Foden,Shot,,Manchester City
+20,2024-10-26,Matchweek 9,Home,Erling Haaland,Southampton,Y,0.38,0.34,Left Foot,7,5,0-0,Aaron Ramsdale,Matheus Nunes,Matheus Nunes,Pass (Live),Bernardo Silva,Pass (Live),,Manchester City
+1,2024-08-16,Matchweek 1,Home,Joshua Zirkzee,Fulham,N,0.07,0.86,Left Foot,11,87,0-0,Bernd Leno,Alejandro Garnacho,Alejandro Garnacho,Pass (Live),Casemiro,Pass (Live),Volley,Manchester Utd
+2,2024-08-24,Matchweek 2,Away,Amad Diallo,Brighton,Y,0.08,0.33,Left Foot,14,60,0-1,Jason Steele,Noussair Mazraoui,Noussair Mazraoui,Pass (Live),Kobbie Mainoo,Pass (Live),Deflected,Manchester Utd
+3,2024-09-14,Matchweek 4,Away,Matthijs de Ligt,Southampton,Y,0.34,0.84,Head,7,35,0-0,Aaron Ramsdale,Bruno Fernandes,Bruno Fernandes,Pass (Live),Christian Eriksen,Pass (Dead),,Manchester Utd
+4,2024-09-14,Matchweek 4,Away,Marcus Rashford,Southampton,Y,0.01,0.37,Right Foot,23,41,1-0,Aaron Ramsdale,Amad Diallo,Amad Diallo,Pass (Live),Christian Eriksen,Pass (Dead),,Manchester Utd
+5,2024-09-14,Matchweek 4,Away,Alejandro Garnacho,Southampton,N,0.30,0.79,Right Foot,10,90+6,2-0,Aaron Ramsdale,Diogo Dalot,Diogo Dalot,Pass (Live),Casemiro,Pass (Live),,Manchester Utd
+6,2024-10-19,Matchweek 8,Home,Alejandro Garnacho,Brentford,Y,0.14,0.25,Right Foot,8,47,0-1,Mark Flekken,Marcus Rashford,Marcus Rashford,Pass (Live),Christian Eriksen,Pass (Live),Volley,Manchester Utd
+7,2024-10-19,Matchweek 8,Home,Rasmus Højlund,Brentford,Y,0.40,0.65,Left Foot,10,62,1-1,Mark Flekken,Bruno Fernandes,Bruno Fernandes,Pass (Live),Christian Eriksen,Pass (Live),,Manchester Utd
+8,2024-10-27,Matchweek 9,Away,Casemiro,West Ham,Y,0.29,0.85,Head,3,81,0-1,Łukasz Fabiański,Joshua Zirkzee,Joshua Zirkzee,Shot,,,,Manchester Utd
+1,2024-08-17,Matchweek 1,Home,Joelinton,Southampton,Y,0.17,0.63,Left Foot,15,45,0-0,Alex McCarthy,Alexander Isak,Alexander Isak,Pass (Live),Alexander Isak,Interception,,Newcastle Utd
+2,2024-08-25,Matchweek 2,Away,Anthony Gordon,Bournemouth,Y,0.45,0.95,Right Foot,3,76,0-1,Neto,Harvey Barnes,Harvey Barnes,Pass (Live),Lewis Hall,Pass (Live),,Newcastle Utd
+3,2024-09-01,Matchweek 3,Home,Harvey Barnes,Tottenham,Y,0.46,0.97,Right Foot,10,37,0-0,Guglielmo Vicario,Lloyd Kelly,Lloyd Kelly,Pass (Live),Dan Burn,Pass (Dead),,Newcastle Utd
+4,2024-09-01,Matchweek 3,Home,Alexander Isak,Tottenham,Y,0.92,1.00,Left Foot,4,78,1-1,Guglielmo Vicario,Jacob Murphy,Jacob Murphy,Pass (Live),Joelinton,Pass (Live),,Newcastle Utd
+5,2024-09-15,Matchweek 4,Away,Fabian Schär,Wolves,Y,0.03,0.32,Right Foot,30,75,0-1,Sam Johnstone,Bruno Guimarães,Bruno Guimarães,Pass (Live),Joe Willock,Pass (Live),Deflected,Newcastle Utd
+6,2024-09-15,Matchweek 4,Away,Harvey Barnes,Wolves,N,0.06,0.82,Right Foot,25,80,1-1,Sam Johnstone,Joe Willock,Harvey Barnes,Take-On,Joe Willock,Pass (Live),,Newcastle Utd
+7,2024-09-21,Matchweek 5,Away,Harvey Barnes,Fulham,Y,0.13,0.72,Right Foot,14,46,0-2,Bernd Leno,Jacob Murphy,Jacob Murphy,Pass (Live),Jacob Murphy,Pass (Live),Deflected,Newcastle Utd
+8,2024-09-28,Matchweek 6,Home,Anthony Gordon,Manchester City,Y,0.79,0.70,Right Foot,13,58,0-1,Ederson,,Anthony Gordon,Fouled,Bruno Guimarães,Pass (Live),,Newcastle Utd
+9,2024-10-27,Matchweek 9,Away,Alexander Isak,Chelsea,Y,0.98,0.99,Right Foot,2,32,0-1,Robert Sánchez,Lewis Hall,Lewis Hall,Pass (Live),Harvey Barnes,Pass (Live),Volley,Newcastle Utd
+1,2024-08-17,Matchweek 1,Home,Chris Wood,Bournemouth,Y,0.71,0.95,Right Foot,8,23,0-0,Neto,,Ryan Yates,Shot,,,,Nott'ham Forest
+2,2024-08-24,Matchweek 2,Away,Morgan Gibbs-White,Southampton,Y*,0.25,0.87,Right Foot,4,70,0-0,Alex McCarthy,,Morgan Gibbs-White,Shot,,,,Nott'ham Forest
+3,2024-08-31,Matchweek 3,Home,Chris Wood,Wolves,Y,0.03,0.10,Head,12,10,0-0,Sam Johnstone,Elliot Anderson,Elliot Anderson,Pass (Dead),Callum Hudson-Odoi,Fouled,,Nott'ham Forest
+4,2024-09-14,Matchweek 4,Away,Callum Hudson-Odoi,Liverpool,N,0.07,0.29,Right Foot,24,72,0-0,Alisson,Anthony Elanga,Anthony Elanga,Pass (Live),Morgan Gibbs-White,Pass (Live),,Nott'ham Forest
+5,2024-09-22,Matchweek 5,Away,Chris Wood,Brighton,Y,0.79,0.89,Right Foot,13,13,0-0,Bart Verbruggen,,Callum Hudson-Odoi,Fouled,,,,Nott'ham Forest
+6,2024-09-22,Matchweek 5,Away,Ramón Sosa,Brighton,N,0.45,0.49,Right Foot,11,70,1-2,Bart Verbruggen,Jota Silva,Jota Silva,Pass (Live),Morgan Gibbs-White,Pass (Live),,Nott'ham Forest
+7,2024-10-06,Matchweek 7,Away,Chris Wood,Chelsea,Y,0.16,0.79,Right Foot,10,49,0-0,Robert Sánchez,Nikola Milenković,Nikola Milenković,Pass (Live),James Ward-Prowse,Pass (Dead),Volley,Nott'ham Forest
+8,2024-10-21,Matchweek 8,Home,Chris Wood,Crystal Palace,Y,0.02,0.05,Right Foot,26,65,0-0,Dean Henderson,,Murillo,Pass (Live),Álex Moreno,Pass (Live),Volley,Nott'ham Forest
+9,2024-10-25,Matchweek 9,Away,Ryan Yates,Leicester City,Y*,0.03,0.22,Right Foot,29,16,0-0,Mads Hermansen,,Elliot Anderson,Shot,,,,Nott'ham Forest
+10,2024-10-25,Matchweek 9,Away,Chris Wood,Leicester City,Y,0.09,0.77,Right Foot,15,47,1-1,Mads Hermansen,Elliot Anderson,Elliot Anderson,Pass (Live),Callum Hudson-Odoi,Pass (Live),,Nott'ham Forest
+11,2024-10-25,Matchweek 9,Away,Chris Wood,Leicester City,Y,0.23,0.23,Head,11,60,2-1,Mads Hermansen,,Nikola Milenković,Pass (Live),,,,Nott'ham Forest
+1,2024-08-31,Matchweek 3,Away,Yukinari Sugawara,Brentford,Y,0.08,0.25,Left Foot,15,90+4,0-3,Mark Flekken,Adam Lallana,Adam Lallana,Pass (Live),Tyler Dibling,Pass (Live),,Southampton
+2,2024-09-21,Matchweek 5,Home,Tyler Dibling,Ipswich Town,Y,0.72,0.67,Left Foot,10,5,0-0,Arijanet Muric,Adam Lallana,Tyler Dibling,Take-On,Adam Lallana,Pass (Live),,Southampton
+3,2024-09-30,Matchweek 6,Away,Taylor Harwood-Bellis,Bournemouth,Y,0.13,0.62,Head,10,51,0-3,Kepa Arrizabalaga,,Charlie Taylor,Pass (Live),Taylor Harwood-Bellis,Shot,,Southampton
+4,2024-10-05,Matchweek 7,Away,Cameron Archer,Arsenal,N,0.06,0.64,Right Foot,15,55,0-0,David Raya,Mateus Fernandes,Mateus Fernandes,Pass (Live),Mateus Fernandes,Tackle,Deflected,Southampton
+5,2024-10-19,Matchweek 8,Home,Cameron Archer,Leicester City,Y,0.43,0.96,Left Foot,6,8,0-0,Mads Hermansen,,Kyle Walker-Peters,Pass (Live),Flynn Downes,Pass (Dead),,Southampton
+6,2024-10-19,Matchweek 8,Home,Joe Aribo,Leicester City,Y,0.58,0.97,Left Foot,9,28,1-0,Mads Hermansen,Kyle Walker-Peters,Kyle Walker-Peters,Pass (Live),Mateus Fernandes,Pass (Live),,Southampton
+1,2024-08-19,Matchweek 1,Away,Pedro Porro,Leicester City,Y,0.09,0.72,Head,9,29,0-0,Mads Hermansen,James Maddison,James Maddison,Pass (Live),Son Heung-min,Pass (Live),,Tottenham
+2,2024-08-24,Matchweek 2,Home,Yves Bissouma,Everton,Y,0.10,0.24,Right Foot,21,14,0-0,Jordan Pickford,Dejan Kulusevski,Dejan Kulusevski,Pass (Live),Dejan Kulusevski,Take-On,,Tottenham
+3,2024-08-24,Matchweek 2,Home,Son Heung-min,Everton,Y*,0.86,0.99,Right Foot,9,25,1-0,Jordan Pickford,,,,,,,Tottenham
+4,2024-08-24,Matchweek 2,Home,Cristian Romero,Everton,Y,0.27,0.51,Head,4,71,2-0,Jordan Pickford,James Maddison,James Maddison,Pass (Dead),,,,Tottenham
+5,2024-08-24,Matchweek 2,Home,Son Heung-min,Everton,Y*,0.25,0.24,Left Foot,9,77,3-0,Jordan Pickford,Micky van de Ven,Micky van de Ven,Pass (Live),,,,Tottenham
+6,2024-09-01,Matchweek 3,Away,Dan Burn(OG),Newcastle Utd,Y,,,,,56,0-1,Nick Pope,,,,,,Own Goal,Tottenham
+7,2024-09-21,Matchweek 5,Home,Dominic Solanke,Brentford,Y,0.71,0.74,Right Foot,9,8,0-1,Mark Flekken,,James Maddison,Shot,,,,Tottenham
+8,2024-09-21,Matchweek 5,Home,Brennan Johnson,Brentford,Y,0.07,0.20,Right Foot,14,28,1-1,Mark Flekken,Son Heung-min,Son Heung-min,Pass (Live),James Maddison,Pass (Live),,Tottenham
+9,2024-09-21,Matchweek 5,Home,James Maddison,Brentford,Y,0.51,0.45,Left Foot,13,85,2-1,Mark Flekken,Son Heung-min,Son Heung-min,Pass (Live),Cristian Romero,Pass (Live),,Tottenham
+10,2024-09-29,Matchweek 6,Away,Brennan Johnson,Manchester Utd,Y,0.91,0.97,Right Foot,4,3,0-0,André Onana,Micky van de Ven,Micky van de Ven,Pass (Live),Destiny Udogie,Interception,,Tottenham
+11,2024-09-29,Matchweek 6,Away,Dejan Kulusevski,Manchester Utd,Y,0.39,0.33,Left Foot,5,47,1-0,André Onana,,Dominic Solanke,Pass (Live),Cristian Romero,Pass (Live),Volley,Tottenham
+12,2024-09-29,Matchweek 6,Away,Dominic Solanke,Manchester Utd,Y,0.87,0.85,Right Foot,3,77,2-0,André Onana,Pape Matar Sarr,Pape Matar Sarr,Shot,,,,Tottenham
+13,2024-10-06,Matchweek 7,Away,Brennan Johnson,Brighton,Y,0.48,0.67,Left Foot,16,23,0-0,Bart Verbruggen,Dominic Solanke,Dominic Solanke,Pass (Live),James Maddison,Pass (Live),,Tottenham
+14,2024-10-06,Matchweek 7,Away,James Maddison,Brighton,Y,0.10,0.15,Right Foot,18,37,1-0,Bart Verbruggen,Timo Werner,Timo Werner,Pass (Live),Dominic Solanke,Pass (Live),,Tottenham
+15,2024-10-19,Matchweek 8,Home,Dejan Kulusevski,West Ham,Y,0.10,0.15,Left Foot,18,36,0-1,Alphonse Areola,James Maddison,James Maddison,Pass (Live),Dominic Solanke,Pass (Live),,Tottenham
+16,2024-10-19,Matchweek 8,Home,Yves Bissouma,West Ham,Y,0.16,0.14,Right Foot,17,52,1-1,Alphonse Areola,Destiny Udogie,Destiny Udogie,Pass (Live),Son Heung-min,Pass (Live),,Tottenham
+17,2024-10-19,Matchweek 8,Home,Alphonse Areola(OG),West Ham,Y,,,,,55,2-1,Alphonse Areola,,,,,,Own Goal,Tottenham
+18,2024-10-19,Matchweek 8,Home,Son Heung-min,West Ham,Y*,0.10,0.20,Left Foot,11,60,3-1,Alphonse Areola,Pape Matar Sarr,Pape Matar Sarr,Pass (Live),,,,Tottenham
+1,2024-08-17,Matchweek 1,Home,Lucas Paquetá,Aston Villa,Y,0.79,0.63,Left Foot,13,37,0-1,Emiliano Martínez,,Tomáš Souček,Fouled,Lucas Paquetá,Pass (Live),,West Ham
+2,2024-08-24,Matchweek 2,Away,Tomáš Souček,Crystal Palace,Y,0.11,0.28,Left Foot,17,67,0-0,Dean Henderson,,Lucas Paquetá,Shot,,,Deflected,West Ham
+3,2024-08-24,Matchweek 2,Away,Jarrod Bowen,Crystal Palace,Y*,0.10,0.58,Left Foot,17,72,1-0,Dean Henderson,Max Kilman,Max Kilman,Pass (Live),Max Kilman,Take-On,,West Ham
+4,2024-08-31,Matchweek 3,Home,Rúben Dias(OG),Manchester City,Y,,,,,19,0-1,Ederson,,,,,,Own Goal,West Ham
+5,2024-09-14,Matchweek 4,Away,Danny Ings,Fulham,N,0.25,0.53,Right Foot,12,90+5,0-1,Bernd Leno,Jarrod Bowen,Jarrod Bowen,Pass (Live),Vladimír Coufal,Pass (Dead),,West Ham
+6,2024-09-28,Matchweek 6,Away,Tomáš Souček,Brentford,Y,0.22,0.48,Left Foot,8,54,0-1,Mark Flekken,Michail Antonio,Michail Antonio,Shot,,,,West Ham
+7,2024-10-05,Matchweek 7,Home,Michail Antonio,Ipswich Town,Y,0.10,0.24,Right Foot,11,1,0-0,Arijanet Muric,Jarrod Bowen,Jarrod Bowen,Pass (Live),Tomáš Souček,Pass (Live),Deflected,West Ham
+8,2024-10-05,Matchweek 7,Home,Mohammed Kudus,Ipswich Town,Y,0.51,0.81,Head,2,43,1-1,Arijanet Muric,,Michail Antonio,Shot,,,,West Ham
+9,2024-10-05,Matchweek 7,Home,Jarrod Bowen,Ipswich Town,Y*,0.04,0.35,Left Foot,15,49,2-1,Arijanet Muric,,Michail Antonio,Shot,,,,West Ham
+10,2024-10-05,Matchweek 7,Home,Lucas Paquetá,Ipswich Town,Y,0.90,0.99,Right Foot,4,69,3-1,Arijanet Muric,,Michail Antonio,Shot,,,,West Ham
+11,2024-10-19,Matchweek 8,Away,Mohammed Kudus,Tottenham,Y,0.07,0.76,Right Foot,10,18,0-0,Guglielmo Vicario,,Aaron Wan-Bissaka,Pass (Live),Aaron Wan-Bissaka,Shot,,West Ham
+12,2024-10-27,Matchweek 9,Home,Crysencio Summerville,Manchester Utd,N,0.53,0.91,Right Foot,3,74,0-0,André Onana,Danny Ings,Danny Ings,Shot,,,,West Ham
+13,2024-10-27,Matchweek 9,Home,Jarrod Bowen,Manchester Utd,Y*,0.79,0.92,Left Foot,13,90+2,1-1,André Onana,,Danny Ings,Fouled,Aaron Wan-Bissaka,Pass (Live),,West Ham
+1,2024-08-25,Matchweek 2,Home,Matheus Cunha,Chelsea,Y,0.46,0.16,Right Foot,11,27,0-1,Robert Sánchez,Rayan Aït-Nouri,Rayan Aït-Nouri,Pass (Live),Jean-Ricner Bellegarde,Tackle,,Wolves
+2,2024-08-25,Matchweek 2,Home,Jørgen Strand Larsen,Chelsea,Y,0.49,0.56,Right Foot,8,45+6,1-2,Robert Sánchez,Toti Gomes,Toti Gomes,Pass (Live),Rayan Aït-Nouri,Pass (Dead),Volley,Wolves
+3,2024-08-31,Matchweek 3,Away,Jean-Ricner Bellegarde,Nott'ham Forest,Y,0.04,0.36,Right Foot,27,12,0-1,Matz Sels,Mario Lemina,Mario Lemina,Pass (Live),,,,Wolves
+4,2024-09-15,Matchweek 4,Home,Mario Lemina,Newcastle Utd,Y*,0.43,0.55,Right Foot,8,36,0-0,Nick Pope,Jørgen Strand Larsen,Jørgen Strand Larsen,Pass (Live),Matheus Cunha,Pass (Live),,Wolves
+5,2024-09-21,Matchweek 5,Away,Matheus Cunha,Aston Villa,Y,0.03,0.16,Right Foot,25,25,0-0,Emiliano Martínez,,,,,,,Wolves
+6,2024-09-28,Matchweek 6,Home,Rayan Aït-Nouri,Liverpool,Y,0.38,0.95,Right Foot,4,56,0-1,Alisson,,Jørgen Strand Larsen,Pass (Live),,,,Wolves
+7,2024-10-05,Matchweek 7,Away,Matheus Cunha,Brentford,Y,0.29,0.31,Right Foot,14,4,0-1,Mark Flekken,Nélson Semedo,Nélson Semedo,Pass (Live),Carlos Forbs,Pass (Live),,Wolves
+8,2024-10-05,Matchweek 7,Away,Jørgen Strand Larsen,Brentford,Y,0.16,0.93,Right Foot,8,26,1-2,Mark Flekken,Rayan Aït-Nouri,Rayan Aït-Nouri,Pass (Live),Rayan Aït-Nouri,Interception,,Wolves
+9,2024-10-05,Matchweek 7,Away,Rayan Aït-Nouri,Brentford,Y,0.06,0.06,Left Foot,11,90+3,2-5,Mark Flekken,Jean-Ricner Bellegarde,Jean-Ricner Bellegarde,Pass (Live),Hwang Hee-chan,Pass (Live),,Wolves
+10,2024-10-20,Matchweek 8,Home,Jørgen Strand Larsen,Manchester City,Y,0.54,0.95,Left Foot,11,7,0-0,Ederson,Nélson Semedo,Nélson Semedo,Pass (Live),Santiago Bueno,Pass (Live),,Wolves
+11,2024-10-26,Matchweek 9,Away,Rayan Aït-Nouri,Brighton,Y,0.06,0.18,Left Foot,8,88,0-2,Bart Verbruggen,,Craig Dawson,Shot,,,,Wolves
+12,2024-10-26,Matchweek 9,Away,Matheus Cunha,Brighton,Y,0.05,0.28,Right Foot,17,90+3,1-2,Bart Verbruggen,Tommy Doyle,Tommy Doyle,Pass (Live),Tommy Doyle,Take-On,Deflected,Wolves
