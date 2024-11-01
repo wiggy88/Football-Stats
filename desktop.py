@@ -11,7 +11,8 @@ data = pd.read_csv("allleagues_backtestdata.csv")
 fixtures = pd.read_csv("fixtures (3).csv")
 filtered_file_path = 'btts_all2.csv'
 file_path = 'over2_5_all1.csv'
-
+goal_data_path = "goal_logs_2024_25.csv"
+goal_data = pd.read_csv(goal_data_path)  # Ensure this reads the file as a DataFrame
 # Ensure the 'Date' column is in datetime format
 data['Date'] = pd.to_datetime(data['Date'])
 
@@ -35,15 +36,48 @@ league_data = data[data['Div'] == selected_league]
 
 
 
+#TopScorers
+# Filter goal_data for the selected teams
+selected_teams_data = goal_data[goal_data['Team'].isin([home_team, away_team])]
+
+# Check if the filtered data is empty
+if selected_teams_data.empty:
+    st.subheader(f"No goals recorded for {home_team} or {away_team}")
+else:
+    # Find the top scorer for the selected teams
+    top_scorer = selected_teams_data['Scorer'].value_counts().idxmax()
+    top_goals = selected_teams_data['Scorer'].value_counts().max()
+
+    # Display in Streamlit
+    st.subheader(f"Top Scorer for {home_team} and {away_team}")
+    st.write(f"Top Scorer: {top_scorer} with {top_goals} goals")
+
 # Add a new column to calculate total goals for each match
 league_data['TotalGoals'] = league_data['FTHG'] + league_data['FTAG'].copy()
 
 # Check if both teams scored and assign the result as a Boolean to the 'Btts' column
 league_data['Btts'] = (league_data['FTHG'] > 0) & (league_data['FTAG'] > 0)
-
+league_data['CleanSheet'] = league_data['FTHG'] == 0
 league_data['HomeOver_2.5_Goals'] = league_data['FTHG'] > 2.5
 league_data['AwayOver_2.5_Goals'] = league_data['FTAG'] > 2.5
+league_data['HomeWin'] = league_data['FTHG'] > league_data['FTAG']
+league_data['AwayWin'] = league_data['FTAG'] > league_data['FTHG']
+# Check if both teams scored and the home team won
+league_data['BTS_HomeWin'] = ((league_data['FTHG'] > 0) &
+                              (league_data['FTAG'] > 0) &
+                              (league_data['FTHG'] > league_data['FTAG'])).astype(int)
 
+league_data['BTS_AwayWin'] = ((league_data['FTAG'] > 0) &
+                              (league_data['FTHG'] > 0) &
+                              (league_data['FTAG'] > league_data['FTHG'])).astype(int)
+
+league_data['BTS_HomeWin'] = ((league_data['FTHG'] > 0) &
+                              (league_data['FTAG'] > 0) &
+                              (league_data['FTHG'] > league_data['FTAG'])).astype(int)
+
+league_data['BTS_Draw'] = ((league_data['FTAG'] > 0) &
+                              (league_data['FTHG'] > 0) &
+                              (league_data['FTAG'] == league_data['FTHG'])).astype(int)
 # Add a new column to check if the match had over 2.5 goals
 league_data['Over_0.5_Goals'] = league_data['TotalGoals'] > 0.5
 league_data['Over_1.5_Goals'] = league_data['TotalGoals'] > 1.5
@@ -67,6 +101,22 @@ away_team_data_last_5 = league_data[league_data['AwayTeam'] == away_team].sort_v
 home_team_data = league_data[league_data['HomeTeam'] == home_team]
 away_team_data = league_data[league_data['AwayTeam'] == away_team]
 
+bttshome_win_last_5 = (home_team_data_last_5['BTS_HomeWin'].sum() / len(home_team_data_last_5)) * 100
+bttsaway_win_last_5 = (away_team_data_last_5['BTS_AwayWin'].sum() / len(away_team_data_last_5)) * 100
+bttshome_win_overall = (home_team_data['BTS_HomeWin'].sum() / len(home_team_data)) * 100
+bttsaway_win_overall = (away_team_data['BTS_AwayWin'].sum() / len(away_team_data)) * 100
+bttshome_draw_last_5 = (home_team_data_last_5['BTS_Draw'].sum() / len(home_team_data_last_5)) * 100
+bttsaway_draw_last_5 = (away_team_data_last_5['BTS_Draw'].sum() / len(away_team_data_last_5)) * 100
+bttshome_draw_overall = (home_team_data['BTS_Draw'].sum() / len(home_team_data)) * 100
+bttsaway_draw_overall = (away_team_data['BTS_Draw'].sum() / len(away_team_data)) * 100
+home_win_last_5 = (home_team_data_last_5['HomeWin'].sum() / len(home_team_data_last_5)) * 100
+away_win_last_5 = (away_team_data_last_5['AwayWin'].sum() / len(away_team_data_last_5)) * 100
+home_win_overall = (home_team_data['HomeWin'].sum() / len(home_team_data)) * 100
+away_win_overall = (away_team_data['AwayWin'].sum() / len(away_team_data)) * 100
+home_cs_last_5 = (home_team_data_last_5['CleanSheet'].sum() / len(home_team_data_last_5)) * 100
+away_cs_last_5 = (away_team_data_last_5['CleanSheet'].sum() / len(away_team_data_last_5)) * 100
+home_cs_overall = (home_team_data['CleanSheet'].sum() / len(home_team_data)) * 100
+away_cs_overall = (away_team_data['CleanSheet'].sum() / len(away_team_data)) * 100
 # Calculate the percentage of games over x goals in the last 5 games
 home_over_0_5_last_5 = (home_team_data_last_5['Over_0.5_Goals'].sum() / len(home_team_data_last_5)) * 100
 away_over_0_5_last_5 = (away_team_data_last_5['Over_0.5_Goals'].sum() / len(away_team_data_last_5)) * 100
@@ -84,9 +134,7 @@ home_over_3_5_overall = (home_team_data['Over_3.5_Goals'].sum() / len(home_team_
 away_over_3_5_overall = (away_team_data['Over_3.5_Goals'].sum() / len(away_team_data)) * 100
 home_over_3_5_last_5 = (home_team_data['Over_3.5_Goals'].sum() / len(home_team_data)) * 100
 away_over_3_5_last_5 = (away_team_data['Over_3.5_Goals'].sum() / len(away_team_data)) * 100
-#Home
-home_over_2_5_last_5 = (home_team_data_last_5['HomeOver_2.5_Goals'].sum() / len(home_team_data_last_5)) * 100
-away_over_2_5_last_5 = (away_team_data_last_5['AwayOver_2.5_Goals'].sum() / len(home_team_data_last_5)) * 100
+
 
 #BTTS Calculations
 home_btts_last_5 = (home_team_data_last_5['Btts'].sum() / len(home_team_data_last_5)) * 100
@@ -150,76 +198,121 @@ col1.metric(label=f"{home_team} Average Home Odds", value=home_odds)
 col2.metric(label=f"{away_team} Average Away Odds", value=away_odds)
 col3.metric(label=f"{home_team} & {away_team} Draw odds", value=draw_odds)
 
-# Display Home Team Stats
-st.markdown(f"### 🏠 {home_team} (Home Stats Average Last 5 Home games)")
-col1, col2, col3 = st.columns(3)
-col1.metric(label="Avg Goals Scored", value=f"{home_goals_scored_last_5:.2f}")
-col2.metric(label="Avg Goals Conceded", value=f"{home_goals_conceded_last_5:.2f}")
-col1.metric(label="Avg 1st Half Goals Scored", value=f"{firsthalfhome_goals_scored_last_5:.2f}")
-col2.metric(label="Avg 1st Half Goals Conceded", value=f"{firsthalfhome_goals_conceded_last_5:.2f}")
-col1.metric(label="Avg 2nd Half Goals Scored", value=f"{sechalfhome_goals_scored_last_5:.2f}")
-col2.metric(label="Avg 2nd Half Goals Conceded", value=f"{sechalfhome_goals_conceded_last_5:.2f}")
-col1.metric(label="Goal Ratio (Goals per SoT)", value=f"{home_goal_ratio_last_5:.2f}")
-col2.metric(label="Goal Ratio Conceded", value=f"{(home_team_data_last_5['FTAG'].sum() / home_team_data_last_5['AST'].sum()):.2f}" if home_team_data_last_5['AST'].sum() > 0 else "0.00")
-col1.metric(label="Percentage of last 5 home games over 2.5 goals:", value=f"{home_over_2_5_last_5:.2f}%")
-col2.metric(label="Percentage of last 5 home games where Both teams scored:", value=f"{home_btts_last_5:.2f}%")
-col3.metric(label='Avg SoT', value=f"{sot_home_last5:.2f}")
-col3.metric(label='Avg SoT Against', value=f"{sot_homeagainst_last5:.2f}")
+# HomeStats
+data2 = {
+    "Statistic": ["Scored Avg", "Conceded Avg", "1st Half Goals Avg", "1st Half Conceded Avg", "2nd Half Goals Avg",
+                  "2nd Half Conceded Avg", 'HomeWin %', 'CleanSheet %', 'BTTS %', 'GoalPerSoT'],
+    "Last 5": [
+        home_goals_scored_last_5,
+        home_goals_conceded_last_5,
+        firsthalfhome_goals_scored_last_5,
+        firsthalfhome_goals_conceded_last_5,
+        sechalfhome_goals_scored_last_5,
+        sechalfhome_goals_conceded_last_5,
+        home_win_last_5,
+        home_cs_last_5,
+        home_btts_last_5,
+        home_goal_ratio_last_5,
 
-# Display Away Team Stats
-st.markdown(f"### 🛫 {away_team} (Away Stats Average last 5 Away games)")
-col1, col2, col3 = st.columns(3)
-col1.metric(label="Avg Goals Scored", value=f"{away_goals_scored_last_5:.2f}")
-col2.metric(label="Avg Goals Conceded", value=f"{away_goals_conceded_last_5:.2f}")
-col1.metric(label="Avg 1st Half Goals Scored", value=f"{firsthalfaway_goals_scored_last_5:.2f}")
-col2.metric(label="Avg 1st Half Goals Conceded", value=f"{firsthalfaway_goals_conceded_last_5:.2f}")
-col1.metric(label="Avg 2nd Half Goals Scored", value=f"{sechalfaway_goals_scored_last_5:.2f}")
-col2.metric(label="Avg 2nd Half Goals Conceded", value=f"{sechalfaway_goals_conceded_last_5:.2f}")
-col1.metric(label="Goal Ratio (Goals per SoT)", value=f"{away_goal_ratio_last_5:.2f}")
-col2.metric(label="Goal Ratio Conceded", value=f"{(away_team_data_last_5['FTHG'].sum() / away_team_data_last_5['HST'].sum()):.2f}" if away_team_data_last_5['HST'].sum() > 0 else "0.00")
-col1.metric(label="Percentage of last 5 home games over 2.5 goals:", value=f"{away_over_2_5_last_5:.2f}%")
-col2.metric(label="Percentage of last 5 home games where Both teams scored:", value=f"{away_btts_last_5:.2f}%")
-col3.metric(label='Avg SoT', value=f"{sot_away_last5:.2f}")
-col3.metric(label='Avg SoT Against', value=f"{sot_awayagainst_last5:.2f}")
+    ],
+    "Overall": [
+        home_goals_scored_overall,
+        home_goals_conceded_overall,
+        firsthalfhome_goals_scored_overall,
+        firsthalfhome_goals_conceded_overall,
+        sechalfhome_goals_scored_overall,
+        sechalfhome_goals_conceded_overall,
+        home_win_overall,
+        home_cs_overall,
+        home_btts_overall,
+        home_goal_ratio_overall
+
+    ]
+}
+
+probability_df2 = pd.DataFrame(data2).set_index("Statistic")
+probability_df2 = probability_df2.applymap(lambda x: '{:.2f}'.format(x)[:4])
+
+# Display the DataFrame in Streamlit without the default index
+st.title(f"{home_team} Home Goals")
+st.table(probability_df2)
+
+#Away Stats
+data3 = {
+    "Statistic": ["Scored Avg", "Conceded Avg", "1st Half Goals Avg", "1st Half Conceded Avg", "2nd Half Goals Avg",
+                  "2nd Half Conceded Avg", 'HomeWin %', 'CleanSheet %', 'BTTS %', 'GoalPerSoT'],
+    "Last 5": [
+        away_goals_scored_last_5,
+        away_goals_conceded_last_5,
+        firsthalfaway_goals_scored_last_5,
+        firsthalfaway_goals_conceded_last_5,
+        sechalfaway_goals_scored_last_5,
+        sechalfaway_goals_conceded_last_5,
+        away_win_last_5,
+        away_cs_last_5,
+        away_btts_last_5,
+        away_goal_ratio_last_5
+    ],
+    "Overall": [
+        away_goals_scored_overall,
+        away_goals_conceded_overall,
+        firsthalfaway_goals_scored_overall,
+        firsthalfaway_goals_conceded_overall,
+        sechalfaway_goals_scored_overall,
+        sechalfaway_goals_conceded_overall,
+        away_win_overall,
+        away_cs_overall,
+        away_btts_overall,
+        away_goal_ratio_overall,
+
+    ]
+}
+
+probability_df3 = pd.DataFrame(data3).set_index("Statistic")
+probability_df3 = probability_df3.applymap(lambda x: '{:.2f}'.format(x)[:4])
+
+# Display the DataFrame in Streamlit without the default index
+st.title(f"{away_team} Away Goals")
+st.table(probability_df3)
 
 
-# Divider
+#BTTS Result
+
 st.markdown("---")
+st.subheader("📊 **BTTS and Result**")
 
-# Display overall statistics
-st.subheader(f'🌐 **Overall Average Stats** - {home_team} (Home) and {away_team} (Away)')
+#Away Stats
+data4 = {
+    "Statistic": [
+        'Btts Win','Btts Draw'
+    ],
+    f"Last 5 {home_team}": [
+        bttshome_win_last_5,
+        bttsaway_draw_last_5,
 
-# Home Overall Stats
-st.markdown(f"### 🏠 {home_team} (Home Overall Stats)")
-col1, col2 = st.columns(2)
-col1.metric(label="Avg Goals Scored (Overall)", value=f"{home_goals_scored_overall:.2f}")
-col2.metric(label="Avg Goals Conceded (Overall)", value=f"{home_goals_conceded_overall:.2f}")
-col1.metric(label="Avg 1st Half Goals Scored (Overall)", value=f"{firsthalfhome_goals_scored_overall:.2f}")
-col2.metric(label="Avg 1st Half Goals Conceded (Overall)", value=f"{firsthalfhome_goals_conceded_overall:.2f}")
-col1.metric(label="Avg 2nd Half Goals Scored (Overall)", value=f"{sechalfhome_goals_scored_overall:.2f}")
-col2.metric(label="Avg 2nd Half Goals Conceded (Overall)", value=f"{sechalfhome_goals_conceded_overall:.2f}")
-col1.metric(label="Goal Ratio (Goals per SoT)", value=f"{home_goal_ratio_overall:.2f}")
-col2.metric(label="Goal Ratio (Goals Conceded per SoT)", value=f"{away_goal_ratio_overall:.2f}")
-col1.metric(label="Percentage of all home games over 2.5 goals:", value=f"{home_over_2_5_overall:.2f}%")
-
+    ],
+    f"Overall {home_team}": [
+        bttshome_win_overall,
+        bttshome_draw_overall
 
 
+    ],
+    f"Last 5 {away_team}": [
+        bttsaway_win_last_5,
+        bttsaway_draw_last_5
+    ],
+    f"Overall {away_team}": [
+        bttsaway_win_overall,
+        bttsaway_win_overall
+    ]
+}
 
-# Away Overall Stats
-st.markdown(f"### 🛫 {away_team} (Away Overall Stats)")
-col1, col2 = st.columns(2)
-col1.metric(label="Avg Goals Scored (Overall)", value=f"{away_goals_scored_overall:.2f}")
-col2.metric(label="Avg Goals Conceded (Overall)", value=f"{away_goals_conceded_overall:.2f}")
-col1.metric(label="Avg 1st Half Goals Scored (Overall)", value=f"{firsthalfaway_goals_scored_overall:.2f}")
-col2.metric(label="Avg 1st Half Goals Conceded (Overall)", value=f"{firsthalfaway_goals_conceded_overall:.2f}")
-col1.metric(label="Avg 2nd Half Goals Scored (Overall)", value=f"{sechalfaway_goals_scored_overall:.2f}")
-col2.metric(label="Avg 2nd Half Goals Conceded (Overall)", value=f"{sechalfaway_goals_conceded_overall:.2f}")
-col1.metric(label="Goal Ratio (Goals per SoT)", value=f"{away_goal_ratio_overall:.2f}")
-col2.metric(label="Goal Ratio (Goals Conceded per SoT)", value=f"{home_goal_ratio_overall:.2f}")
-col1.metric(label="Percentage of all away games over 2.5 goals:", value=f"{away_over_2_5_overall:.2f}%")
+probability_df4 = pd.DataFrame(data4).set_index("Statistic")
+probability_df4 = probability_df4.applymap(lambda x: '{:.2f}'.format(x)[:4])
 
-
-
+# Display the DataFrame in Streamlit without the default index
+st.title(" BTTS Result")
+st.table(probability_df4)
 
 # Divider for BTTS and O2.5 probabilities
 st.markdown("---")
@@ -289,7 +382,7 @@ for home_goals in goal_range:
 scoreline_probs = sorted(scoreline_probs, key=lambda x: x[2], reverse=True)[:4]
 
 # Display the top 5 most probable scorelines
-st.subheader(f'Top 5 Most Probable Scorelines for {home_team} vs {away_team}')
+st.subheader(f'Top 4 Most Probable Scorelines for {home_team} vs {away_team}')
 for home_goals, away_goals, prob in scoreline_probs:
     st.write(f'{home_team} {home_goals} - {away_team} {away_goals}: {prob:.2%}')
 
@@ -667,3 +760,5 @@ probability_df = pd.DataFrame(data)
 # Display the DataFrame in Streamlit
 st.title("Goal Threshold Probabilities")
 st.table(probability_df)
+
+
