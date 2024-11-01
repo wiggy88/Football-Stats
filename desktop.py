@@ -11,8 +11,7 @@ data = pd.read_csv("allleagues_backtestdata.csv")
 fixtures = pd.read_csv("fixtures (3).csv")
 filtered_file_path = 'btts_all2.csv'
 file_path = 'over2_5_all1.csv'
-goal_data_path = "goal_logs_2024_25.csv"
-goal_data = pd.read_csv(goal_data_path)  # Ensure this reads the file as a DataFrame
+
 # Ensure the 'Date' column is in datetime format
 data['Date'] = pd.to_datetime(data['Date'])
 
@@ -33,24 +32,6 @@ selected_league = selected_row['Div'].values[0]  # Automatically get the league 
 
 # Filter data for the selected league
 league_data = data[data['Div'] == selected_league]
-
-
-
-#TopScorers
-# Filter goal_data for the selected teams
-selected_teams_data = goal_data[goal_data['Team'].isin([home_team, away_team])]
-
-# Check if the filtered data is empty
-if selected_teams_data.empty:
-    st.subheader(f"No goals recorded for {home_team} or {away_team}")
-else:
-    # Find the top scorer for the selected teams
-    top_scorer = selected_teams_data['Scorer'].value_counts().idxmax()
-    top_goals = selected_teams_data['Scorer'].value_counts().max()
-
-    # Display in Streamlit
-    st.subheader(f"Top Scorer for {home_team} and {away_team}")
-    st.write(f"Top Scorer: {top_scorer} with {top_goals} goals")
 
 # Add a new column to calculate total goals for each match
 league_data['TotalGoals'] = league_data['FTHG'] + league_data['FTAG'].copy()
